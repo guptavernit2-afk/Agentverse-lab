@@ -66,6 +66,21 @@ class Kernel:
         self._state = updated
         return event
 
+    @property
+    def run_id(self) -> str:
+        return self._run_id
+
+    def world_at(self, version: int) -> World:
+        with self._lock:
+            if type(version) is not int or not 0 <= version < len(self._states):
+                raise ValueError("unknown committed version")
+            return self._states[version]
+
+    def replay_event(self, event: Event) -> None:
+        """Rebuild from a verified storage stream without consulting a policy."""
+        with self._lock:
+            self._commit(event)
+
     def observe(self, actor: str, *, version: int | None = None) -> Observation:
         with self._lock:
             index = self._state.version if version is None else version

@@ -43,7 +43,7 @@ def verify(root: Path, phase: int) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", type=int, choices=[0, 1, 2, 3], required=True)
+    parser.add_argument("--phase", type=int, choices=[0, 1, 2, 3, 4], required=True)
     args = parser.parse_args()
     return verify(Path(__file__).resolve().parents[1], args.phase)
 

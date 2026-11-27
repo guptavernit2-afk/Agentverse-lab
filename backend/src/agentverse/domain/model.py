@@ -88,7 +88,7 @@ class World:
         offset = (self.seed + self.round - 1) % len(ids)
         return ids[offset:] + ids[:offset]
 
-    def digest(self) -> str:
+    def canonical(self) -> str:
         data = {
             **vars(self),
             "scenario": self.scenario.model_dump(mode="json"),
@@ -96,5 +96,7 @@ class World:
             "offers": [asdict(offer) for offer in self.offers],
             "social": asdict(self.social),
         }
-        encoded = json.dumps(data, sort_keys=True, separators=(",", ":"), allow_nan=False)
-        return sha256(encoded.encode("utf-8")).hexdigest()
+        return json.dumps(data, sort_keys=True, separators=(",", ":"), allow_nan=False)
+
+    def digest(self) -> str:
+        return sha256(self.canonical().encode("utf-8")).hexdigest()
