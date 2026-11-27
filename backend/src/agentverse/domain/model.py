@@ -4,10 +4,13 @@ import json
 from typing import Literal
 
 from agentverse.experiments.town import Position, TownScenario
+from .social import Claim, Commitment, DecisionNote, Evidence, Grant, Message, SocialState
 
 Asset = Literal["food", "coins"]
 EventKind = Literal["ROUND_STARTED", "ROUND_SETTLED", "WAIT", "MOVE", "WORK",
-                    "GIVE_FOOD", "CREATE_OFFER", "ACCEPT_OFFER", "REVOKE_OFFER"]
+                    "GIVE_FOOD", "CREATE_OFFER", "ACCEPT_OFFER", "REVOKE_OFFER",
+                    "SPEAK", "CREATE_COMMITMENT", "FULFILL_COMMITMENT",
+                    "CLAIM_PUBLISHED", "HARVEST_RECORDED", "EVIDENCE_GRANTED"]
 TREASURY = "@treasury"
 
 
@@ -53,6 +56,13 @@ class Event:
     position: Position | None = None
     offers: tuple[Offer, ...] = ()
     hungry: tuple[str, ...] = ()
+    claim: Claim | None = None
+    evidence: Evidence | None = None
+    source_id: str | None = None
+    grant: Grant | None = None
+    message: Message | None = None
+    commitments: tuple[Commitment, ...] = ()
+    note: DecisionNote | None = None
 
 
 @dataclass(frozen=True)
@@ -68,6 +78,7 @@ class World:
     version: int = 0
     produced: int = 0
     consumed: int = 0
+    social: SocialState = SocialState()
 
     def agent(self, agent_id: str) -> Agent:
         return next(agent for agent in self.agents if agent.id == agent_id)
@@ -83,6 +94,7 @@ class World:
             "scenario": self.scenario.model_dump(mode="json"),
             "agents": [asdict(agent) for agent in self.agents],
             "offers": [asdict(offer) for offer in self.offers],
+            "social": asdict(self.social),
         }
         encoded = json.dumps(data, sort_keys=True, separators=(",", ":"), allow_nan=False)
         return sha256(encoded.encode("utf-8")).hexdigest()

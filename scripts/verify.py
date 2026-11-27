@@ -13,8 +13,13 @@ def verify(root: Path, phase: int) -> int:
     frontend = root / "frontend"
     npm_name = "npm.cmd" if os.name == "nt" else "npm"
     npm = shutil.which(npm_name) or npm_name
-    pytest_args = (["tests/test_health.py", "tests/test_scenario_schema.py"] if phase == 0
-                   else ["--hypothesis-show-statistics"])
+    if phase == 0:
+        pytest_args = ["tests/test_health.py", "tests/test_scenario_schema.py"]
+    elif phase == 1:
+        pytest_args = ["--hypothesis-show-statistics", "--ignore=tests/test_social.py",
+                       "--ignore=tests/test_observation.py"]
+    else:
+        pytest_args = ["--hypothesis-show-statistics"]
     checks = [
         ("Backend import", [sys.executable, "-c", "import agentverse.api.main"], backend),
         ("Backend tests", [sys.executable, "-m", "pytest", "-q", *pytest_args], backend),
@@ -38,7 +43,7 @@ def verify(root: Path, phase: int) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", type=int, choices=[0, 1], required=True)
+    parser.add_argument("--phase", type=int, choices=[0, 1, 2], required=True)
     args = parser.parse_args()
     return verify(Path(__file__).resolve().parents[1], args.phase)
 

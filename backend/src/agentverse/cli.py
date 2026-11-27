@@ -32,16 +32,40 @@ def fixture_action(world: World, actor: str) -> dict:
     return {"type": "WORK", "workplace": profile.workplace}
 
 
+def social_action(world: World, actor: str) -> dict:
+    if actor == "A1" and world.round == 1:
+        return {"type": "CREATE_COMMITMENT", "beneficiary_id": "A2", "quantity": 2, "due_round": 3}
+    if actor == "A2" and world.round == 1:
+        return {"type": "SPEAK", "recipient_id": "board", "text": "I checked the harvest register.",
+                "claim_ids": ["claim-harvest"], "evidence_ids": ["evidence-harvest"]}
+    if actor == "A2" and world.round == 2:
+        return {"type": "CREATE_COMMITMENT", "beneficiary_id": "A1", "quantity": 1, "due_round": 2}
+    if actor == "A1" and world.round in (2, 3):
+        for promise in world.social.commitments:
+            if promise.promisor == actor and promise.outstanding:
+                return {"type": "FULFILL_COMMITMENT", "commitment_id": promise.id, "quantity": 1}
+    return {"type": "WAIT"}
+
+
 def run(config: TownScenario, seed: int, fixture: str, run_id: str) -> dict:
     kernel = Kernel(config, seed, run_id=run_id)
-    report = {"mode": "test_fixture", "fixture": fixture, "seed": seed,
+    report = {"mode": "test_fixture", "view": "operator", "fixture": fixture, "seed": seed,
               "scenario_id": config.scenario_id, "initial_hash": kernel.state.digest(), "rounds": []}
+    if fixture == "social":
+        setup = [kernel.publish_harvest_claim(), kernel.issue_harvest_record(),
+                 kernel.grant_evidence("evidence-harvest", grantee="A2")]
+        report["setup_events"] = [asdict(event) for event in setup]
     while kernel.state.stage == "ready":
         events = [kernel.start_round()]
         order = kernel.state.order()
         while kernel.state.stage == "acting":
             turn = kernel.turn
-            action = {"type": "WAIT"} if fixture == "wait" else fixture_action(kernel.state, turn.actor)
+            if fixture == "social":
+                action = social_action(kernel.state, turn.actor)
+            elif fixture == "economy":
+                action = fixture_action(kernel.state, turn.actor)
+            else:
+                action = {"type": "WAIT"}
             events.append(kernel.submit(turn, action))
         events.append(kernel.settle_round())
         world = kernel.state
@@ -51,6 +75,9 @@ def run(config: TownScenario, seed: int, fixture: str, run_id: str) -> dict:
             "treasury": world.treasury, "produced": world.produced, "consumed": world.consumed,
             "unmet": sum(a.unmet for a in world.agents), "hash": world.digest(),
         })
+    if fixture == "social":
+        report["commitments"] = [asdict(c) for c in kernel.state.social.commitments]
+        report["trust"] = [asdict(edge) for edge in kernel.state.social.trust]
     return report
 
 
@@ -58,7 +85,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--scenario", required=True, type=Path)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--fixture", choices=["economy", "wait"], default="economy")
+    parser.add_argument("--fixture", choices=["economy", "wait", "social"], default="economy")
     parser.add_argument("--run-id", default="cli")
     args = parser.parse_args()
     try:

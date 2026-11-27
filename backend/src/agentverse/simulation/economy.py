@@ -50,10 +50,14 @@ def resolve(world: World, actor_id: str, action: Proposal) -> Event:
             return replace(event, entries=(Entry("food", actor_id, action.recipient_id, action.quantity),))
         if not world.round <= action.expiry_round <= len(scenario.harvest):
             raise Rejection("invalid_expiry")
-        offer = Offer(f"offer-{event.sequence}", actor_id, action.recipient_id,
+        # Preserve the original economy-only IDs independently of private administrative events.
+        slot = (world.round - 1) * (len(world.agents) + 2) + world.cursor + 2
+        offer = Offer(f"offer-{slot}", actor_id, action.recipient_id,
                       action.quantity, action.price, action.expiry_round)
         return replace(event, offers=(offer,))
 
+    if not isinstance(action, (AcceptOffer, RevokeOffer)):
+        raise TypeError("unsupported economy action")
     offer = next((o for o in world.offers if o.id == action.offer_id), None)
     if offer is None:
         raise Rejection("unknown_offer")
@@ -63,8 +67,6 @@ def resolve(world: World, actor_id: str, action: Proposal) -> Event:
         if actor_id != offer.seller:
             raise Rejection("wrong_seller")
         return replace(event, offers=(replace(offer, status="revoked"),))
-    if not isinstance(action, AcceptOffer):
-        raise TypeError("unsupported action")
     if actor_id != offer.buyer:
         raise Rejection("wrong_buyer")
     seller = world.agent(offer.seller)

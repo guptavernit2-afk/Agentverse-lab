@@ -2,7 +2,7 @@
 
 from typing import Annotated, Literal
 
-from pydantic import BaseModel, ConfigDict, Field, TypeAdapter
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, TypeAdapter
 
 from agentverse.experiments.town import Name
 
@@ -53,5 +53,41 @@ class RevokeOffer(Action):
     offer_id: Name
 
 
-Proposal = Wait | Move | Work | GiveFood | CreateOffer | AcceptOffer | RevokeOffer
+ShortText = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=512)]
+References = Annotated[list[Name], Field(max_length=8)]
+
+
+class Speak(Action):
+    type: Literal["SPEAK"]
+    recipient_id: Name
+    text: ShortText
+    claim_ids: References = Field(default_factory=list)
+    evidence_ids: References = Field(default_factory=list)
+
+
+class CreateCommitment(Action):
+    type: Literal["CREATE_COMMITMENT"]
+    beneficiary_id: Name
+    quantity: Amount
+    due_round: int
+
+
+class FulfillCommitment(Action):
+    type: Literal["FULFILL_COMMITMENT"]
+    commitment_id: Name
+    quantity: Amount
+
+
+class ReportedBelief(Action):
+    claim_id: Name
+    interpretation: ShortText
+
+
+class NoteInput(Action):
+    summary: ShortText
+    evidence_ids: References = Field(default_factory=list)
+    beliefs: Annotated[list[ReportedBelief], Field(max_length=8)] = Field(default_factory=list)
+
+
+Proposal = Wait | Move | Work | GiveFood | CreateOffer | AcceptOffer | RevokeOffer | Speak | CreateCommitment | FulfillCommitment
 proposal_schema = TypeAdapter(Annotated[Proposal, Field(discriminator="type")])

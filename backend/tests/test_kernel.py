@@ -3,6 +3,8 @@ from dataclasses import replace
 import json
 
 import pytest
+
+from kernel_steps import advance
 from pydantic import ValidationError
 
 from agentverse.domain.model import Entry
@@ -17,19 +19,6 @@ def active(town):
     kernel = Kernel(town, 42, run_id="kernel-test")
     kernel.start_round()
     return kernel
-
-
-def advance(kernel, actor, round_number):
-    while kernel.state.stage != "finished":
-        if kernel.state.stage == "ready":
-            kernel.start_round()
-        elif kernel.state.stage == "settlement":
-            kernel.settle_round()
-        elif kernel.turn.actor == actor and kernel.turn.round == round_number:
-            return
-        else:
-            kernel.submit(kernel.turn, WAIT)
-    pytest.fail("requested turn was never reached")
 
 
 def rejected(kernel, payload, reason):

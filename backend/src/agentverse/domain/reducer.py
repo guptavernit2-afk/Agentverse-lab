@@ -3,6 +3,7 @@
 from dataclasses import replace
 
 from .model import TREASURY, Event, World
+from .social_reducer import apply_social
 
 
 def check_invariants(world: World) -> None:
@@ -25,6 +26,8 @@ def check_invariants(world: World) -> None:
 def reduce_event(world: World, event: Event) -> World:
     if event.sequence != world.version + 1:
         raise ValueError("out-of-order event")
+    if world.stage == "finished":
+        raise ValueError("run has finished")
     agents = {agent.id: agent for agent in world.agents}
     treasury = world.treasury
     produced, consumed = world.produced, world.consumed
@@ -51,7 +54,11 @@ def reduce_event(world: World, event: Event) -> World:
     offers = {offer.id: offer for offer in world.offers}
     offers.update((offer.id, offer) for offer in event.offers)
     cursor = world.cursor
-    if event.kind == "ROUND_STARTED":
+    if event.kind in ("CLAIM_PUBLISHED", "HARVEST_RECORDED", "EVIDENCE_GRANTED"):
+        if event.round != world.round or event.actor is not None:
+            raise ValueError("invalid scenario event")
+        stage = world.stage
+    elif event.kind == "ROUND_STARTED":
         if world.stage != "ready" or event.round != world.round + 1:
             raise ValueError("invalid round start")
         cursor, stage = 0, "acting"
@@ -76,6 +83,6 @@ def reduce_event(world: World, event: Event) -> World:
 
     result = replace(world, agents=tuple(agents.values()), treasury=treasury, offers=tuple(offers.values()),
                      round=event.round, cursor=cursor, stage=stage, version=event.sequence,
-                     produced=produced, consumed=consumed)
+                     produced=produced, consumed=consumed, social=apply_social(world.social, event))
     check_invariants(result)
     return result

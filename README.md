@@ -2,7 +2,7 @@
 
 AgentVerse is a local simulation lab for studying how access to verifiable evidence affects decisions and cooperation in a six-agent town. The vision, phase roadmap, and acceptance gates are in [PRD.md](PRD.md). The [state authority ADR](docs/adr/0001-state-authority.md) records the boundaries that govern later implementation.
 
-Phase 1 provides an in-memory deterministic town economy and an offline CLI. The API and frontend retain their Phase 0 health endpoint and inactive shell. See the [Phase 1 verification report](docs/verification/phase-1.md).
+The in-memory kernel supports a deterministic town economy, scoped messages, evidence grants, food commitments, and directional trust. The offline CLI exercises the kernel. [Phase 2 verification report](docs/verification/phase-2.md)
 
 ## Setup and verification
 
@@ -15,7 +15,7 @@ Run the commands from the repository root.
 ```powershell
 uv --directory backend sync --locked
 npm.cmd --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 1
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 2
 ```
 
 ### Unix
@@ -23,7 +23,7 @@ uv --offline --directory backend run --no-sync python ../scripts/verify.py --pha
 ```sh
 uv --directory backend sync --locked
 npm --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 1
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 2
 ```
 
 The verifier runs the application import check, pytest, the frontend type check, and the production build. It exits nonzero if any check fails.
@@ -36,7 +36,7 @@ Run the scripted economy fixture from the repository root.
 uv --offline --directory backend run --no-sync python -m agentverse.cli --scenario ../scenarios/town-v1.json --seed 42
 ```
 
-The JSON trace labels the mode as `test_fixture` and includes all turns, rejection reasons, ledger entries, unmet demand, and round-end hashes. Use `--fixture wait` for the all-WAIT accounting example. Both fixtures are for developer verification.
+The JSON trace is an operator view labeled `test_fixture`. It includes turns, rejection reasons, ledger entries, unmet demand, and round-end hashes. Use `--fixture wait` for the all-WAIT accounting example or `--fixture social` for a partial delivery, a fulfilled promise, and a breach. For an individual agent, `kernel.observe(agent_id, version=version).policy_context` returns canonical JSON with its permitted observation and bounded memory at that committed version.
 
 ## Local preview
 
