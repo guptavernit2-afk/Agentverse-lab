@@ -1,0 +1,39 @@
+name: Verification
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  phase-zero:
+    name: Phase 0 on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-24.04, windows-2025]
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
+        with:
+          version: "0.13.1"
+          enable-cache: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: frontend/.node-version
+          package-manager-cache: false
+      - name: Install backend from lockfile
+        run: uv --directory backend sync --locked
+      - name: Install frontend from lockfile
+        run: |
+          $npm = if ($IsWindows) { 'npm.cmd' } else { 'npm' }
+          & $npm --prefix frontend ci
+      - name: Verify Phase 0
+        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 0

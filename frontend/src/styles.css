@@ -1,0 +1,37 @@
+:root {
+  color: #182a22;
+  background: #edf0ea;
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(1rem, 5vw, 3rem);
+  box-sizing: border-box;
+  place-items: center;
+}
+
+#root {
+  width: min(100%, 34rem);
+}
+
+.shell {
+  padding: clamp(1.5rem, 6vw, 3rem);
+  border: 1px solid #bac7bd;
+  border-radius: 0.75rem;
+  background: #fafbf8;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0.75rem 0 0;
+  color: #43594c;
+}
