@@ -121,10 +121,13 @@ def execute(db: Store, eid: str, label: str, policy):
         policy.record_attempt = record_attempt
     status = "interrupted"
     try:
-        while k.state.stage != "finished":
-            expected = k.state.version
-            step(k, policy)
-            db.save(k, expected, f"step-{expected}", "experiment")
+        # Keep the WAL open across decisions. Each event still receives a full durable commit.
+        with db.connection() as writer:
+            while k.state.stage != "finished":
+                expected = k.state.version
+                step(k, policy)
+                with db.transaction(write=True, connection=writer) as sql:
+                    db.save_in(sql, k, expected, f"step-{expected}", "experiment")
         status = "complete"
     except BudgetExhausted:
         status = "incomplete_budget"

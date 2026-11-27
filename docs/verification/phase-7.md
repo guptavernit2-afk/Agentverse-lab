@@ -2,7 +2,7 @@
 
 **Offline release gate PASS locally. Live smoke and full live pair BLOCKED / UNVERIFIED.** No real provider requests or charges occurred. Headless Chromium exercised the local UI. The release workflow repeats the full gate, audits and secret scans on Windows and Ubuntu.
 
-## Clean setup
+## Initial clean setup
 
 Tested on Windows 11 x64 build 26300, Intel Core Ultra 5 225H, 14 logical processors visible, CPython 3.12.15, uv 0.13.1, Node 24.22.3 and npm 11.19.1. The clean checkout started from Phase 6 and received the staged release patch. Its Git tree matched the staged source byte for byte at `d99835edf32a6e3ebd996391ef6a109436b2de1c` before this report was added. It had its own virtual environment, npm installation and built frontend.
 
@@ -46,3 +46,11 @@ Seed 42, one completed rule-based pair. Both branches consumed 20 units and ende
 The real-provider smoke, authorized paired live experiment, pricing and empirical evaluation remain outstanding. The zero-network budget preview for a 96-call, one-million-token allowance estimated 929,406 reserved tokens over 96 offline reference contexts. The largest primary reservation was 10,479 tokens. Actual live contexts and retries can differ. Mock tests proved a reservation existed before transport, an interrupted call preserved the pending world turn, another branch could not spend an unresolved allowance, and a provider echo of the credential could not enter exported notes. Real billing and latency remain unknown.
 
 The application supports one trusted operator on loopback. Database tamper resistance against its owner, multi-user hosting, distribution licensing and optional Phase 8 extensions are outside this verified release.
+
+## Hosted Windows benchmark correction
+
+The first release candidate passed the Ubuntu job and completed all functional checks on the hosted Windows runner. Windows measured a median of **5.443 s** and correctly failed the 5 s benchmark. A fresh Windows clone of the identical GitHub commit passed locally with a 0.730 s median. [Original release run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45976520025)
+
+The experiment opened and closed a SQLite connection for every event and repeatedly created a rollback journal. The correction uses write-ahead logging and keeps an idle connection open for each branch. Each event still commits in its own transaction with SQLite synchronous mode FULL. No transaction spans a provider call. A new regression test observed committed progress from another connection, interrupted a subsequent transaction, verified rollback and recovered the exact retried state after reopening.
+
+The complete corrected local gate passed with **158 backend tests**, 150 generated sequences, two frontend unit tests, Chromium E2E, 96.85% critical-module coverage and independent verification of the earlier published export. The seven measured pairs took 0.243, 0.198, 0.209, 0.198, 0.191, 0.193 and 0.200 s. **Median 0.198 s** on the same developer hardware. The threshold, workload, sample count and durability assertions remain enforced.

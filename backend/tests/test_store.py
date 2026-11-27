@@ -143,3 +143,24 @@ def test_future_db_version(saved):
         sql.execute("PRAGMA user_version=99")
     with pytest.raises(ValueError, match="unsupported"):
         Store(db.path)
+
+
+def test_reused_writer_keeps_commits_durable_and_visible(saved):
+    db, k = saved
+    with db.connection() as writer:
+        assert writer.execute("PRAGMA synchronous").fetchone()[0] == 2  # FULL
+        assert writer.execute("PRAGMA journal_mode").fetchone()[0] == "wal"
+        k.start_round()
+        with db.transaction(write=True, connection=writer) as sql:
+            db.save_in(sql, k, 2, "start", "advance")
+        assert not writer.in_transaction
+        assert db.load("parent").turn == k.turn
+        k.submit(k.turn, {"type": "WAIT"})
+        with pytest.raises(RuntimeError):
+            with db.transaction(write=True, connection=writer) as sql:
+                db.save_in(sql, k, 3, "turn", "decision")
+                raise RuntimeError("simulate crash before commit")
+        assert not writer.in_transaction and db.load("parent").state.version == 3
+        with db.transaction(write=True, connection=writer) as sql:
+            db.save_in(sql, k, 3, "turn", "decision")
+    assert Store(db.path).load("parent").state.digest() == k.state.digest()

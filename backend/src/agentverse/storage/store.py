@@ -1,6 +1,6 @@
 """Verified event streams, transactional compare-and-swap and independent forks."""
 from collections.abc import Iterator
-from contextlib import contextmanager
+from contextlib import contextmanager, nullcontext
 from dataclasses import asdict
 from hashlib import sha256
 import json
@@ -37,20 +37,29 @@ def chain_hash(previous: str, seq: int, command: str, payload: str) -> str:
 class Store:
     def __init__(self, path: Path):
         self.path = path
-        with self.transaction(write=True) as db:
-            migrate(db)
+        with self.connection() as db:
+            if db.execute("PRAGMA journal_mode=WAL").fetchone()[0] != "wal":
+                raise RuntimeError("SQLite write-ahead logging unavailable")
+            with self.transaction(write=True, connection=db):
+                migrate(db)
 
     @contextmanager
-    def transaction(self, *, write=False) -> Iterator[sqlite3.Connection]:
+    def connection(self) -> Iterator[sqlite3.Connection]:
         db = sqlite3.connect(self.path, timeout=10, isolation_level=None)
-        db.row_factory = sqlite3.Row
         try:
+            db.row_factory = sqlite3.Row
             db.execute("PRAGMA foreign_keys=ON")
+            db.execute("PRAGMA synchronous=FULL")
+            yield db
+        finally:
+            db.close()
+
+    @contextmanager
+    def transaction(self, *, write=False, connection=None) -> Iterator[sqlite3.Connection]:
+        source = self.connection() if connection is None else nullcontext(connection)
+        with source as db, db:
             db.execute("BEGIN IMMEDIATE" if write else "BEGIN")
             yield db
-            db.commit()
-        finally:
-            db.close()  # an unfinished transaction rolls back
 
     @staticmethod
     def _row(db, run):
