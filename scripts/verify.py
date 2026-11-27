@@ -8,14 +8,16 @@ import subprocess
 import sys
 
 
-def verify_phase_zero(root: Path) -> int:
+def verify(root: Path, phase: int) -> int:
     backend = root / "backend"
     frontend = root / "frontend"
     npm_name = "npm.cmd" if os.name == "nt" else "npm"
     npm = shutil.which(npm_name) or npm_name
+    pytest_args = (["tests/test_health.py", "tests/test_scenario_schema.py"] if phase == 0
+                   else ["--hypothesis-show-statistics"])
     checks = [
         ("Backend import", [sys.executable, "-c", "import agentverse.api.main"], backend),
-        ("Backend tests", [sys.executable, "-m", "pytest", "-q"], backend),
+        ("Backend tests", [sys.executable, "-m", "pytest", "-q", *pytest_args], backend),
         ("Frontend type check", [npm, "--offline", "run", "typecheck"], frontend),
         ("Frontend build", [npm, "--offline", "run", "build"], frontend),
     ]
@@ -36,9 +38,9 @@ def verify_phase_zero(root: Path) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", type=int, choices=[0], required=True)
-    parser.parse_args()
-    return verify_phase_zero(Path(__file__).resolve().parents[1])
+    parser.add_argument("--phase", type=int, choices=[0, 1], required=True)
+    args = parser.parse_args()
+    return verify(Path(__file__).resolve().parents[1], args.phase)
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 AgentVerse is a local simulation lab for studying how access to verifiable evidence affects decisions and cooperation in a six-agent town. The vision, phase roadmap, and acceptance gates are in [PRD.md](PRD.md). The [state authority ADR](docs/adr/0001-state-authority.md) records the boundaries that govern later implementation.
 
-Phase 0 provides the service health endpoint, a scenario metadata schema, and a frontend shell. See [progress](docs/progress.md) and the [Phase 0 verification report](docs/verification/phase-0.md) for the current checkpoint.
+Phase 1 provides an in-memory deterministic town economy and an offline CLI. The API and frontend retain their Phase 0 health endpoint and inactive shell. See the [Phase 1 verification report](docs/verification/phase-1.md).
 
 ## Setup and verification
 
@@ -15,7 +15,7 @@ Run the commands from the repository root.
 ```powershell
 uv --directory backend sync --locked
 npm.cmd --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 0
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 1
 ```
 
 ### Unix
@@ -23,10 +23,20 @@ uv --offline --directory backend run --no-sync python ../scripts/verify.py --pha
 ```sh
 uv --directory backend sync --locked
 npm --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 0
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 1
 ```
 
 The verifier runs the application import check, pytest, the frontend type check, and the production build. It exits nonzero if any check fails.
+
+## Kernel demo
+
+Run the scripted economy fixture from the repository root.
+
+```sh
+uv --offline --directory backend run --no-sync python -m agentverse.cli --scenario ../scenarios/town-v1.json --seed 42
+```
+
+The JSON trace labels the mode as `test_fixture` and includes all turns, rejection reasons, ledger entries, unmet demand, and round-end hashes. Use `--fixture wait` for the all-WAIT accounting example. Both fixtures are for developer verification.
 
 ## Local preview
 

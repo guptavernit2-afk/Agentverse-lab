@@ -8,8 +8,8 @@ permissions:
   contents: read
 
 jobs:
-  phase-zero:
-    name: Phase 0 on ${{ matrix.os }}
+  phase-one:
+    name: Phase 1 on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,5 +35,5 @@ jobs:
         run: |
           $npm = if ($IsWindows) { 'npm.cmd' } else { 'npm' }
           & $npm --prefix frontend ci
-      - name: Verify Phase 0
-        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 0
+      - name: Verify through Phase 1
+        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 1

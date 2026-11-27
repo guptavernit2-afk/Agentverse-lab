@@ -2,10 +2,13 @@
 
 ## Phase 0 · Repository setup and architectural contract
 
-Phase 0 passed the local acceptance gate in the owner-selected repository. See [Phase 0 verification](verification/phase-0.md).
+Phase 0 passed locally and on both hosted runners at commit `d8da021`. [Phase 0 verification](verification/phase-0.md) · [Hosted CI](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45952530983)
+
+## Phase 1 · Deterministic simulation kernel and economy
+
+The local acceptance gate passed. [Phase 1 verification](verification/phase-1.md)
 
 ## Open items
 
-- Review the Phase 0 gate and obtain separate owner approval before Phase 1.
-- Record hosted Windows and Linux job results when the workflow runs.
+- Review the Phase 1 results before approving Phase 2.
 - The owner will select the project distribution license before public release.

@@ -1,0 +1,178 @@
+{
+  "scenario_id": "town-baseline",
+  "schema_version": 1,
+  "grid": [
+    "............",
+    "............",
+    "..##........",
+    "............",
+    "........##..",
+    "............",
+    "............",
+    "...##.......",
+    "............",
+    "............",
+    "............",
+    "............"
+  ],
+  "zones": [
+    {
+      "id": "farm",
+      "tiles": [
+        [
+          1,
+          1
+        ]
+      ],
+      "capacity": 6
+    },
+    {
+      "id": "market",
+      "tiles": [
+        [
+          3,
+          1
+        ]
+      ],
+      "capacity": 6
+    },
+    {
+      "id": "town-hall",
+      "tiles": [
+        [
+          5,
+          1
+        ]
+      ],
+      "capacity": 6
+    },
+    {
+      "id": "clinic",
+      "tiles": [
+        [
+          7,
+          1
+        ]
+      ],
+      "capacity": 6
+    },
+    {
+      "id": "workshop",
+      "tiles": [
+        [
+          9,
+          1
+        ]
+      ],
+      "capacity": 6
+    },
+    {
+      "id": "square",
+      "tiles": [
+        [
+          5,
+          5
+        ]
+      ],
+      "capacity": 6
+    }
+  ],
+  "profiles": [
+    {
+      "id": "A1",
+      "role": "Farmer",
+      "goal": "Produce food and maintain reserves.",
+      "seed_memory": "I started the day at the farm.",
+      "profile_version": 1,
+      "workplace": "farm",
+      "position": [
+        1,
+        1
+      ],
+      "food": 7,
+      "coins": 20
+    },
+    {
+      "id": "A2",
+      "role": "Merchant",
+      "goal": "Earn coins and maintain customers.",
+      "seed_memory": "I started the day at the farm.",
+      "profile_version": 1,
+      "workplace": "market",
+      "position": [
+        1,
+        1
+      ],
+      "food": 7,
+      "coins": 35
+    },
+    {
+      "id": "A3",
+      "role": "Mayor",
+      "goal": "Reduce food insecurity.",
+      "seed_memory": "I started the day at the town-hall.",
+      "profile_version": 1,
+      "workplace": "town-hall",
+      "position": [
+        5,
+        1
+      ],
+      "food": 1,
+      "coins": 30
+    },
+    {
+      "id": "A4",
+      "role": "Doctor",
+      "goal": "Help vulnerable citizens and meet personal needs.",
+      "seed_memory": "I started the day at the clinic.",
+      "profile_version": 1,
+      "workplace": "clinic",
+      "position": [
+        7,
+        1
+      ],
+      "food": 1,
+      "coins": 25
+    },
+    {
+      "id": "A5",
+      "role": "Engineer",
+      "goal": "Earn wages and support logistics.",
+      "seed_memory": "I started the day at the workshop.",
+      "profile_version": 1,
+      "workplace": "workshop",
+      "position": [
+        9,
+        1
+      ],
+      "food": 1,
+      "coins": 20
+    },
+    {
+      "id": "A6",
+      "role": "Resident",
+      "goal": "Obtain food and preserve savings.",
+      "seed_memory": "I started the day at the square.",
+      "profile_version": 1,
+      "workplace": "square",
+      "position": [
+        5,
+        5
+      ],
+      "food": 1,
+      "coins": 20
+    }
+  ],
+  "farmer_id": "A1",
+  "treasury": 60,
+  "harvest": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+  ]
+}
