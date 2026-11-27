@@ -143,6 +143,15 @@ class Kernel:
                 event = replace(event, note=report)
             return self._commit(event)
 
+    def reject_turn(self, turn: Turn, reason: str) -> Event:
+        with self._lock:
+            if turn != self.turn:
+                raise TurnConflict("stale or mismatched turn")
+            if reason not in {"invalid_schema", "provider_missing_key", "provider_unavailable",
+                              "provider_response", "provider_context_limit"}:
+                raise ValueError("unknown decision failure")
+            return self._commit(Event(turn.version + 1, turn.round, "WAIT", turn.actor, reason))
+
     def settle_round(self) -> Event:
         with self._lock:
             w = self._state

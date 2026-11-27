@@ -14,5 +14,6 @@ See the [Phase 2 verification report](verification/phase-2.md) for the checkpoin
 
 ## Open items
 
-- Review the Phase 2 results before approving Phase 3.
+- The owner approved sequential work and pushes through Phases 3–7, conditional on each verification gate.
+- Phase 3 offline policy tests passed. [Phase 3 evidence](verification/phase-3.md)
 - The owner will select the project distribution license before public release.
