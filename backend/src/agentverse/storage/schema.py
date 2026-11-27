@@ -28,6 +28,10 @@ CREATE TABLE controls (
 CREATE TABLE control_results (
     run TEXT NOT NULL REFERENCES runs(id), key TEXT NOT NULL, request TEXT NOT NULL,
     response TEXT NOT NULL, PRIMARY KEY (run,key));
+""", """
+CREATE TABLE provider_attempts (
+    run TEXT NOT NULL REFERENCES runs(id), ordinal INTEGER NOT NULL, before_version INTEGER NOT NULL,
+    actor TEXT NOT NULL, details TEXT NOT NULL, PRIMARY KEY (run,ordinal));
 """)
 
 

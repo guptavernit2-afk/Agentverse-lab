@@ -85,7 +85,9 @@ export function Dashboard() {
 		}
 	}
 	const controls =
-		meta && !meta.read_only && !["stopped", "complete"].includes(meta.status);
+		meta &&
+		!meta.read_only &&
+		!["stopped", "complete", "failed"].includes(meta.status);
 	const settled = w ? w.round : 0;
 	return (
 		<div className="app">
@@ -333,7 +335,12 @@ export function Dashboard() {
 												))}
 											</div>
 										</section>
-										<Inspector run={id} actor={actor} seq={meta.version} />
+										<Inspector
+											key={`${id}-${actor}-${meta.version}`}
+											run={id}
+											actor={actor}
+											seq={meta.version}
+										/>
 									</aside>
 								</div>
 							</>

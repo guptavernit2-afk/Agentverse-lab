@@ -4,7 +4,7 @@ from dataclasses import dataclass
 import json
 from typing import Annotated, Protocol
 
-from pydantic import Field, ValidationError
+from pydantic import Field
 
 from agentverse.domain.actions import Action, NoteInput, Proposal
 from .observation import Observation
@@ -31,16 +31,16 @@ class BudgetExhausted(Exception):
 
 
 def parse_decision(raw: str) -> Decision:
-    if len(raw.encode("utf-8")) > 8192:
-        raise DecisionError("invalid_schema")
     def unique(pairs):
         result = dict(pairs)
         if len(result) != len(pairs):
             raise ValueError("duplicate member")
         return result
     try:
+        if not isinstance(raw, str) or len(raw.encode("utf-8")) > 8192:
+            raise DecisionError("invalid_schema")
         return Decision.model_validate(json.loads(raw, object_pairs_hook=unique))
-    except (ValueError, ValidationError, RecursionError):
+    except (ValueError, RecursionError):
         raise DecisionError("invalid_schema") from None
 
 

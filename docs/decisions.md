@@ -37,3 +37,11 @@ Verification details and limitations are in the [Phase 0 report](verification/ph
 - Agent observations use allowlisted fields at one committed version. Memory selects the last 12 visible records with viewer-local IDs. Outstanding personal obligations are retrieved independently of that window. Optional reports contain bounded self-authored summaries, beliefs linked to public claims, and authorized evidence citations.
 - Message and commitment IDs use logical turn slots. Offer identifiers preserve Phase 1 numbering using the public schedule. Private administrative events can advance the trusted state version without changing IDs or memory counters seen by unrelated agents. Operator audit sequences remain in the full event log.
 - Earlier immutable worlds and committed events back historical inspection in memory. The agent serializer receives the requested prefix and uses the permissions at each historical event for memory. Durable snapshots and restart recovery remain Phase 4 work.
+
+## Phases 3–7
+
+- The owner approved the sequence of offline gates and pushes. Each succeeding phase waited for the preceding local gate and both GitHub-hosted runner jobs.
+- The rule policy consumes the serialized observation. The configured Gemini REST adapter accepts one allowlisted simulator proposal. Real model selection and billing approval remain outstanding. Offline and fixture results retain their mode labels.
+- SQLite uses foreign keys, numbered migrations, optimistic command versions, immutable hashed events, and settled checkpoints. Forks copy a verified prefix transactionally. The paired protocol grants the public harvest record only in B. [Persistence and experiment ADR](adr/0002-persistence-and-counterfactuals.md)
+- Metrics, comparisons, and exports derive from a consistent read transaction. The standalone export checker replays both branches and verifies their recorded states and metrics. Unknown measurements stay unavailable. The CSV uses B minus A as its sign convention.
+- The trusted local dashboard and API share an origin. Locator-based Chromium tests use a real server and isolated database. The release gate enforces an individual threshold for every named critical module. Network-dependent advisory queries and secret scans run separately from the offline test gate.

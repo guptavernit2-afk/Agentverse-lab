@@ -1,25 +1,16 @@
 # Progress
 
-## Phase 0 · Repository setup and architectural contract
+The owner approved sequential work and pushes through Phase 7, conditional on each verification gate. The required roadmap comprises Phases 0–7. Phase 8 contains optional extensions.
 
-Phase 0 passed locally and on both hosted runners at commit `d8da021`. [Phase 0 verification](verification/phase-0.md) · [Hosted CI](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45952530983)
+| Phase | Evidence | Hosted verification |
+| --- | --- | --- |
+| 0 · Repository and architecture | [Report](verification/phase-0.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45952530983) |
+| 1 · Deterministic kernel | [Report](verification/phase-1.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45969527496) |
+| 2 · Social protocol and visibility | [Report](verification/phase-2.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45970956744) |
+| 3 · Decision policies | [Report](verification/phase-3.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45971898379) |
+| 4 · Persistence and replay | [Report](verification/phase-4.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45972321460) |
+| 5 · Controlled experiment | [Report](verification/phase-5.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45972925459) |
+| 6 · API and dashboard | [Report](verification/phase-6.md) | [Windows and Ubuntu](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45974567232) |
+| 7 · Offline release | [Report](verification/phase-7.md) | [Release workflow runs](https://github.com/guptavernit2-afk/Agentverse-lab/actions/workflows/ci.yml) |
 
-## Phase 1 · Deterministic simulation kernel and economy
-
-The local gate and both hosted jobs passed at commit `bbe05ed`. [Phase 1 verification](verification/phase-1.md) · [Hosted CI](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45969527496)
-
-## Phase 2 · Social protocol, evidence and bounded observation
-
-See the [Phase 2 verification report](verification/phase-2.md) for the checkpoint evidence.
-
-## Open items
-
-- The owner approved sequential work and pushes through Phases 3–7, conditional on each verification gate.
-- Phase 3 offline policy tests passed. [Phase 3 evidence](verification/phase-3.md)
-- Phase 3 passed on both hosted runners. [CI run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45971898379)
-- Phase 4 replay, restart and independent forks passed locally. [Phase 4 evidence](verification/phase-4.md)
-- Phase 4 passed on both hosted runners. [CI run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45972321460)
-- Phase 5 completed the offline scarcity pair. [Phase 5 evidence](verification/phase-5.md)
-- Phase 5 passed on both hosted runners. [CI run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45972925459)
-- Phase 6 passed the local interactive workflow. [Phase 6 evidence](verification/phase-6.md)
-- The owner will select the project distribution license before public release.
+The live smoke test and full live pair require owner approval of the real model, credential and budget. The owner will also select the distribution license before any package release.

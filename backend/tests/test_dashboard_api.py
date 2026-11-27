@@ -105,3 +105,19 @@ def test_history_privacy_and_pair_api(client):
         assert c.post(f"/experiments/{eid}/branches/{label}/run").status_code == 200
     assert c.get(f"/experiments/{eid}/export?format=csv").text.startswith("experiment,mode")
     assert c.get(f"/experiments/{eid}/export").json()["completed_pairs"] == 1
+
+
+def test_scheduled_run_stops_on_corruption(client):
+    c = client
+    meta = new(c)
+    with c.app.state.store.transaction(write=True) as sql:
+        sql.execute("UPDATE snapshots SET digest='damaged' WHERE run=? AND seq=2", (meta["id"],))
+    control(c, meta, "start", "go")
+    for _ in range(80):
+        meta = c.get("/runs/r-test").json()
+        if meta["status"] == "failed":
+            break
+        time.sleep(.03)
+    assert meta["status"] == "failed" and meta["version"] == 2
+    assert c.get("/runs/r-test/replay?seq=2").status_code == 409
+    assert control(c, meta, "step", "retry").status_code == 409

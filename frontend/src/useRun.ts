@@ -86,5 +86,5 @@ export function useRun(id: string, fail: (message: string) => void) {
 			ws?.close();
 		};
 	}, [id, refresh, fail]);
-	return { bundle, refresh };
+	return { bundle: bundle?.meta.id === id ? bundle : null, refresh };
 }

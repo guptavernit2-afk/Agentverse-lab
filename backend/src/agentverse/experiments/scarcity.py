@@ -6,9 +6,9 @@ from time import perf_counter
 from uuid import uuid4
 
 from agentverse.agents.gemini import GeminiPolicy
-from agentverse.agents.policy import RulePolicy
+from agentverse.agents.policy import BudgetExhausted, RulePolicy
 from agentverse.experiments.town import TownScenario
-from agentverse.simulation.runner import run
+from agentverse.simulation.runner import step
 from agentverse.storage.store import Store, canonical
 from .metrics import differences, trajectory
 
@@ -93,6 +93,7 @@ def execute(db: Store, eid: str, label: str, policy):
     branch = pair["branches"][label]
     if branch["status"] != "ready":
         return branch["status"]
+    k = db.load(branch["run"])
     # Claim execution before any external request. A crash leaves a visible interrupted run.
     with db.transaction(write=True) as sql:
         if isinstance(policy, GeminiPolicy):
@@ -104,39 +105,64 @@ def execute(db: Store, eid: str, label: str, policy):
             policy.reserved_tokens = max(policy.reserved_tokens, spent.get("reserved_tokens", 0))
         claimed = sql.execute("UPDATE branches SET status='running' WHERE run=? AND status='ready'", (branch["run"],))
         if not claimed.rowcount:
-            raise ValueError("branch execution already claimed")
-    k = db.load(branch["run"])
-    initial = k.state.version
+            return sql.execute("SELECT status FROM branches WHERE run=?", (branch["run"],)).fetchone()[0]
     live = isinstance(policy, GeminiPolicy)
-    before = (policy.attempts, policy.reported_tokens, policy.reserved_tokens) if live else (0, 0, 0)
-    counters = ("retries", "input_tokens", "output_tokens", "usage_responses")
-    initial_counts = {key: getattr(policy, key, 0) for key in counters}
     started = perf_counter()
-    try:
-        status = run(k, policy)
-    except BaseException:
+
+    def record_attempt(details):
+        # Commit a reservation before transport and sanitize the result before export.
+        turn = k.turn
         with db.transaction(write=True) as sql:
-            db.save_in(sql, k, initial, "execute", "experiment")
-            sql.execute("UPDATE branches SET status='interrupted' WHERE run=?", (branch["run"],))
-        raise
-    calls = policy.attempts - before[0] if live else 0
-    telemetry = {"seconds": perf_counter() - started, "calls": calls,
-                 "reported_tokens": policy.reported_tokens - before[1] if live else 0,
-                 "reserved_tokens": policy.reserved_tokens - before[2] if live else 0,
-                 "estimated_cost": None if live else 0}
-    for key in counters:
-        telemetry[key] = getattr(policy, key, 0) - initial_counts[key]
-    telemetry["usage_complete"] = telemetry["usage_responses"] == calls
-    if live and calls and not telemetry["usage_responses"]:
-        for key in ("reported_tokens", "input_tokens", "output_tokens"):
-            telemetry[key] = None
-    if live and policy.limits.price_per_million is not None:
-        telemetry["estimated_cost"] = telemetry["reserved_tokens"] * policy.limits.price_per_million / 1_000_000
-    with db.transaction(write=True) as sql:
-        db.save_in(sql, k, initial, "execute", "experiment")
-        sql.execute("UPDATE branches SET status=?,telemetry=? WHERE run=?",
-                    (status, canonical(telemetry), branch["run"]))
+            sql.execute("INSERT INTO provider_attempts VALUES (?,?,?,?,?) "
+                        "ON CONFLICT(run,ordinal) DO UPDATE SET details=excluded.details",
+                        (k.run_id, details["ordinal"], turn.version, turn.actor, canonical(details)))
+
+    if live:
+        policy.record_attempt = record_attempt
+    status = "interrupted"
+    try:
+        while k.state.stage != "finished":
+            expected = k.state.version
+            step(k, policy)
+            db.save(k, expected, f"step-{expected}", "experiment")
+        status = "complete"
+    except BudgetExhausted:
+        status = "incomplete_budget"
+    finally:
+        if live:
+            policy.record_attempt = None
+        with db.transaction(write=True) as sql:
+            price = policy.limits.price_per_million if live else 0
+            stats = runtime(sql, k.run_id, price, perf_counter() - started)
+            sql.execute("UPDATE branches SET status=?,telemetry=? WHERE run=?",
+                        (status, canonical(stats), k.run_id))
     return status
+
+
+def runtime(sql, name, price, seconds):
+    attempts = [json.loads(r[0]) for r in sql.execute(
+        "SELECT details FROM provider_attempts WHERE run=? ORDER BY ordinal", (name,))]
+    reserved = sum(max(a["reserved_tokens"], a["reported_tokens"] or 0) for a in attempts)
+    stats = {"seconds": seconds, "calls": len(attempts), "retries": sum(a["retry"] for a in attempts),
+             "reserved_tokens": reserved, "estimated_cost": reserved * price / 1000000 if price is not None else None,
+             "usage_responses": sum(a["reported_tokens"] is not None for a in attempts),
+             "usage_complete": all(a["reported_tokens"] is not None for a in attempts)}
+    for field in ("reported_tokens", "input_tokens", "output_tokens"):
+        values = [a.get(field) for a in attempts]
+        stats[field] = sum(values) if all(v is not None for v in values) else None
+    return stats
+
+
+def recover_branches(sql):
+    abandoned = sql.execute("SELECT b.run,e.manifest FROM branches b JOIN experiments e ON b.experiment=e.id "
+                            "WHERE b.status='running'").fetchall()
+    for row in abandoned:
+        settings = json.loads(row["manifest"])["policy"]
+        live = settings["mode"] == "live_llm"
+        price = settings["limits"].get("price_per_million") if live else 0
+        stats = runtime(sql, row["run"], price, None)
+        sql.execute("UPDATE branches SET status=?,telemetry=? WHERE run=?",
+                    ("interrupted" if live else "ready", canonical(stats), row["run"]))
 
 
 def comparison(db: Store, eid: str) -> dict:

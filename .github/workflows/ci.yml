@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   verification:
-    name: Phase 6 on ${{ matrix.os }}
+    name: Phase 7 on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d # v10.4.0
         with:
           version: "0.13.1"
@@ -40,5 +41,7 @@ jobs:
         run: |
           if ($IsWindows) { npx.cmd --no-install playwright install chromium }
           else { npx --no-install playwright install --with-deps chromium }
-      - name: Verify through Phase 6
-        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 6
+      - name: Verify through Phase 7
+        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 7
+      - name: Audit locked dependencies and scan repository history
+        run: uv --offline --directory backend run --no-sync python ../scripts/release_audit.py

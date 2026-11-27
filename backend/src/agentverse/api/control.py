@@ -43,7 +43,7 @@ def command(db: Store, name: str, body: dict):
             raise TurnConflict("experiment branches are controlled by the protocol")
         if (old["version"], old["revision"]) != (body["expected_version"], body["expected_revision"]):
             raise TurnConflict("stale control request")
-        if old["status"] in {"stopped", "complete"}:
+        if old["status"] in {"stopped", "complete", "failed"}:
             raise TurnConflict("run is terminal")
         action = body["action"]
         if action == "step":
@@ -51,7 +51,7 @@ def command(db: Store, name: str, body: dict):
                 raise TurnConflict("pause before stepping")
             kernel = db.load_in(sql, name)
             settle_next(kernel)
-            db.save_in(sql, kernel, old["version"], key, request)
+            db.save_in(sql, kernel, old["version"], "operator-" + key, request)
             status = "complete" if kernel.state.stage == "finished" else "paused"
         else:
             status = {"start": "running", "pause": "paused", "stop": "stopped"}[action]

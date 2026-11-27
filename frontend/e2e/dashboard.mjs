@@ -166,7 +166,10 @@ try {
 			const data = JSON.parse(content);
 			assert.equal(data.manifest.experiment, eid);
 			assert.equal(data.history.B.length, 67);
-		} else assert.match(content, /unmet_units,28/);
+		} else
+			assert.ok(
+				content.includes(`unmet_units,${comp.rounds.B.at(-1).unmet_units}`),
+			);
 	}
 	await button("Inspect history B").click();
 	await page.getByText("Verified state hash").waitFor();

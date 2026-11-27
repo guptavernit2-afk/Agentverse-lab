@@ -106,7 +106,12 @@ export function History({ bundle }: { bundle: Bundle }) {
 					)}
 				</div>
 			</section>
-			<Inspector run={bundle.meta.id} actor={actor} seq={seq} />
+			<Inspector
+				key={`${bundle.meta.id}-${actor}-${seq}`}
+				run={bundle.meta.id}
+				actor={actor}
+				seq={seq}
+			/>
 		</div>
 	);
 }

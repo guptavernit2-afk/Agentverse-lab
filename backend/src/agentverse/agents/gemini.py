@@ -7,6 +7,7 @@ import json
 from math import isfinite
 import re
 from threading import Lock
+from time import perf_counter
 
 from .observation import Observation
 from .policy import BudgetExhausted, Decision, DecisionError, parse_decision
@@ -56,10 +57,22 @@ def generate(model: str, key: str, body: dict, timeout: float) -> dict:
         return json.loads(raw)
     except (OSError, HTTPException):
         raise ProviderError(True) from None
-    except ValueError:
+    except (ValueError, RecursionError):
         raise ProviderError(False) from None
     finally:
         conn.close()
+
+
+def request_for(observation: Observation, limits: Limits) -> tuple[dict, int]:
+    ctx = observation.policy_context
+    if len(ctx.encode()) > 64000:
+        raise DecisionError("provider_context_limit")
+    body = {"systemInstruction": {"parts": [{"text": INSTRUCTION}]},
+            "contents": [{"role": "user", "parts": [{"text": ctx}]}],
+            "generationConfig": {"temperature": 0, "maxOutputTokens": limits.output,
+                                 "responseMimeType": "application/json"}}
+    bound = len(json.dumps(body).encode()) + limits.output + 128
+    return body, bound
 
 
 class GeminiPolicy:
@@ -75,6 +88,7 @@ class GeminiPolicy:
         self.retries = self.input_tokens = self.output_tokens = 0
         self.usage_responses = 0
         self.outputs: list[str] = []
+        self.record_attempt: Callable[[dict], None] | None = None
         self._lock = Lock()
 
     @property
@@ -95,37 +109,61 @@ class GeminiPolicy:
     def decide(self, observation: Observation) -> Decision:
         if not self._key:
             raise DecisionError("provider_missing_key")
-        ctx = observation.policy_context
-        if len(ctx.encode()) > 64000:
-            raise DecisionError("provider_context_limit")
-        body = {"systemInstruction": {"parts": [{"text": INSTRUCTION}]},
-                "contents": [{"role": "user", "parts": [{"text": ctx}]}],
-                "generationConfig": {"temperature": 0, "maxOutputTokens": self.limits.output,
-                                     "responseMimeType": "application/json"}}
-        bound = len(json.dumps(body).encode()) + self.limits.output + 128
+        body, bound = request_for(observation, self.limits)
         for attempt in range(2):
             self.reserve(bound)
             self.retries += int(attempt > 0)
+            record = {"ordinal": self.attempts, "retry": bool(attempt), "reserved_tokens": bound,
+                      "status": "reserved", "output_hash": None, "reported_tokens": None}
+            if self.record_attempt:
+                self.record_attempt(record)
+            started = perf_counter()
             try:
                 reply = self._transport(self.model, self._key, body, self.limits.timeout)
-                used = reply.get("usageMetadata", {}).get("totalTokenCount")
-                if type(used) is int and used >= 0:
-                    with self._lock:
-                        self.reported_tokens += used
-                        self.usage_responses += 1
-                        usage = reply["usageMetadata"]
-                        self.input_tokens += usage.get("promptTokenCount", 0)
-                        self.output_tokens += usage.get("candidatesTokenCount", 0) + usage.get("thoughtsTokenCount", 0)
-                        self.reserved_tokens += max(0, used - bound)
+                self.account_usage(reply.get("usageMetadata", {}), record)
                 candidate = reply["candidates"][0]
                 if candidate.get("finishReason") != "STOP":
                     raise DecisionError("provider_response")
                 raw = "".join(p["text"] for p in candidate["content"]["parts"] if not p.get("thought"))
-                self.outputs.append(sha256(raw.encode()).hexdigest())
-                return parse_decision(raw)
+                record["output_hash"] = sha256(raw.encode("utf-8", errors="surrogatepass")).hexdigest()
+                self.outputs.append(record["output_hash"])
+                if self._key in raw:
+                    raise DecisionError("provider_response")
+                decision = parse_decision(raw)
+                if self._key in decision.model_dump_json():
+                    raise DecisionError("provider_response")
+                record["status"] = "proposal"
+                return decision
             except (ProviderError, TimeoutError, ConnectionError) as error:
-                if attempt or (isinstance(error, ProviderError) and not error.transient):
+                transient = not isinstance(error, ProviderError) or error.transient
+                record["status"] = "transient_error" if transient else "provider_error"
+                if attempt or not transient:
                     raise DecisionError("provider_unavailable") from None
-            except (AttributeError, KeyError, IndexError, TypeError):
+            except DecisionError as error:
+                record["status"] = str(error)
+                raise
+            except (AttributeError, KeyError, IndexError, TypeError, UnicodeError):
+                record["status"] = "provider_response"
                 raise DecisionError("provider_response") from None
+            finally:
+                record["seconds"] = perf_counter() - started
+                if self.record_attempt:
+                    self.record_attempt(record)
         raise AssertionError("unreachable")
+
+    def account_usage(self, usage: dict, record: dict):
+        keys = ("totalTokenCount", "promptTokenCount", "candidatesTokenCount", "thoughtsTokenCount")
+        if not isinstance(usage, dict) or any(type(usage[k]) is not int or usage[k] < 0 for k in keys if k in usage):
+            raise DecisionError("provider_response")
+        used = usage.get("totalTokenCount")
+        if used is None:
+            return
+        record.update(reported_tokens=used, input_tokens=usage.get("promptTokenCount"),
+                      output_tokens=(usage.get("candidatesTokenCount", 0) + usage.get("thoughtsTokenCount", 0)
+                                     if "candidatesTokenCount" in usage else None))
+        with self._lock:
+            self.reported_tokens += used
+            self.usage_responses += 1
+            self.input_tokens += record["input_tokens"] or 0
+            self.output_tokens += record["output_tokens"] or 0
+            self.reserved_tokens += max(0, used - record["reserved_tokens"])

@@ -86,7 +86,13 @@ def metadata(name: Id, request: Request):
 async def advance(app, name, revision, delay):
     while True:
         await asyncio.sleep(delay)
-        if not await asyncio.to_thread(tick, app.state.store, name, revision):
+        try:
+            if not await asyncio.to_thread(tick, app.state.store, name, revision):
+                break
+        except (ValueError, sqlite3.DatabaseError):
+            with app.state.store.transaction(write=True) as sql:
+                sql.execute("UPDATE controls SET status='failed',revision=revision+1 "
+                            "WHERE run=? AND revision=? AND status='running'", (name, revision))
             break
 
 

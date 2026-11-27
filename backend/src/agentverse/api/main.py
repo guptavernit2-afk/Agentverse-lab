@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
+from agentverse.experiments.scarcity import recover_branches
 from agentverse.experiments.town import TownScenario
 from agentverse.simulation.kernel import TurnConflict
 from agentverse.storage.store import IntegrityError, Store
@@ -35,7 +36,7 @@ def create_app(database: Path | None = None):
         app.state.tasks = {}
         with app.state.store.transaction(write=True) as sql:
             sql.execute("UPDATE controls SET status='paused',revision=revision+1 WHERE status='running'")
-            sql.execute("UPDATE branches SET status='interrupted' WHERE status='running'")
+            recover_branches(sql)
         try:
             yield
         finally:
@@ -44,7 +45,7 @@ def create_app(database: Path | None = None):
                 task.cancel()
             await asyncio.gather(*tasks, return_exceptions=True)
 
-    app = FastAPI(title="AgentVerse Lab", version=version("agentverse-lab"), lifespan=lifespan)
+    app = FastAPI(title="AgentVerse Lab", version=version("agentverse-lab"), lifespan=lifespan, docs_url=None, redoc_url=None)
     app.add_middleware(LocalBoundary)
     app.include_router(router)
 

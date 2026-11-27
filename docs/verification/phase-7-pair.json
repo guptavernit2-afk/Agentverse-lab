@@ -1,0 +1,8319 @@
+{
+  "manifest": {
+    "assignment": {
+      "A": {
+        "harvest_record_access": "private"
+      },
+      "B": {
+        "harvest_record_access": "public"
+      }
+    },
+    "checkpoint": 2,
+    "children": {
+      "A": "85ceec58fe32404ab2a0bf5534c2efb4-A",
+      "B": "85ceec58fe32404ab2a0bf5534c2efb4-B"
+    },
+    "engine": "0.1.0",
+    "experiment": "85ceec58fe32404ab2a0bf5534c2efb4",
+    "parent": "85ceec58fe32404ab2a0bf5534c2efb4-parent",
+    "planned_pairs": 1,
+    "planned_rounds": 8,
+    "policy": {
+      "mode": "rule_based",
+      "model": null,
+      "policy_version": "town-priorities-1",
+      "prompt_version": null
+    },
+    "prefix_hash": "74dcef0e80412b8a9de41308953bc9ca3a303dc22e6087865a02dfbbf0e51197",
+    "primary_metric": "unmet_units",
+    "protocol": "food-scarcity-v1",
+    "scenario": {
+      "farmer_id": "A1",
+      "grid": [
+        "............",
+        "............",
+        "..##........",
+        "............",
+        "........##..",
+        "............",
+        "............",
+        "...##.......",
+        "............",
+        "............",
+        "............",
+        "............"
+      ],
+      "harvest": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "profiles": [
+        {
+          "coins": 20,
+          "food": 7,
+          "goal": "Produce food and maintain reserves.",
+          "id": "A1",
+          "position": [
+            1,
+            1
+          ],
+          "profile_version": 1,
+          "role": "Farmer",
+          "seed_memory": "I started the day at the farm.",
+          "workplace": "farm"
+        },
+        {
+          "coins": 35,
+          "food": 7,
+          "goal": "Earn coins and maintain customers.",
+          "id": "A2",
+          "position": [
+            1,
+            1
+          ],
+          "profile_version": 1,
+          "role": "Merchant",
+          "seed_memory": "I started the day at the farm.",
+          "workplace": "market"
+        },
+        {
+          "coins": 30,
+          "food": 1,
+          "goal": "Reduce food insecurity.",
+          "id": "A3",
+          "position": [
+            5,
+            1
+          ],
+          "profile_version": 1,
+          "role": "Mayor",
+          "seed_memory": "I started the day at the town-hall.",
+          "workplace": "town-hall"
+        },
+        {
+          "coins": 25,
+          "food": 1,
+          "goal": "Help vulnerable citizens and meet personal needs.",
+          "id": "A4",
+          "position": [
+            7,
+            1
+          ],
+          "profile_version": 1,
+          "role": "Doctor",
+          "seed_memory": "I started the day at the clinic.",
+          "workplace": "clinic"
+        },
+        {
+          "coins": 20,
+          "food": 1,
+          "goal": "Earn wages and support logistics.",
+          "id": "A5",
+          "position": [
+            9,
+            1
+          ],
+          "profile_version": 1,
+          "role": "Engineer",
+          "seed_memory": "I started the day at the workshop.",
+          "workplace": "workshop"
+        },
+        {
+          "coins": 20,
+          "food": 1,
+          "goal": "Obtain food and preserve savings.",
+          "id": "A6",
+          "position": [
+            5,
+            5
+          ],
+          "profile_version": 1,
+          "role": "Resident",
+          "seed_memory": "I started the day at the square.",
+          "workplace": "square"
+        }
+      ],
+      "scenario_id": "food-scarcity",
+      "schema_version": 1,
+      "treasury": 60,
+      "zones": [
+        {
+          "capacity": 6,
+          "id": "farm",
+          "tiles": [
+            [
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "capacity": 6,
+          "id": "market",
+          "tiles": [
+            [
+              3,
+              1
+            ]
+          ]
+        },
+        {
+          "capacity": 6,
+          "id": "town-hall",
+          "tiles": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "capacity": 6,
+          "id": "clinic",
+          "tiles": [
+            [
+              7,
+              1
+            ]
+          ]
+        },
+        {
+          "capacity": 6,
+          "id": "workshop",
+          "tiles": [
+            [
+              9,
+              1
+            ]
+          ]
+        },
+        {
+          "capacity": 6,
+          "id": "square",
+          "tiles": [
+            [
+              5,
+              5
+            ]
+          ]
+        }
+      ]
+    },
+    "seed": 42
+  },
+  "branches": {
+    "A": {
+      "status": "complete",
+      "run": "85ceec58fe32404ab2a0bf5534c2efb4-A",
+      "runtime": {
+        "calls": 0,
+        "estimated_cost": 0.0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "reported_tokens": 0,
+        "reserved_tokens": 0,
+        "retries": 0,
+        "seconds": 0.3124941999994917,
+        "usage_complete": true,
+        "usage_responses": 0
+      }
+    },
+    "B": {
+      "status": "complete",
+      "run": "85ceec58fe32404ab2a0bf5534c2efb4-B",
+      "runtime": {
+        "calls": 0,
+        "estimated_cost": 0.0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "reported_tokens": 0,
+        "reserved_tokens": 0,
+        "retries": 0,
+        "seconds": 0.31885560000227997,
+        "usage_complete": true,
+        "usage_responses": 0
+      }
+    }
+  },
+  "rounds": {
+    "A": [
+      {
+        "round": 1,
+        "unmet_units": 0,
+        "agents_affected": 0,
+        "food_units": 15,
+        "produced_units": 3,
+        "consumed_units": 6,
+        "agent_coins": 158,
+        "treasury_coins": 52,
+        "holdings": {
+          "A1": {
+            "food": 9,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 6,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 0
+          },
+          "A4": {
+            "food": 0,
+            "coins": 27,
+            "unmet": 0
+          },
+          "A5": {
+            "food": 0,
+            "coins": 22,
+            "unmet": 0
+          },
+          "A6": {
+            "food": 0,
+            "coins": 22,
+            "unmet": 0
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 2,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7,
+        "evidence_citations": 0,
+        "scheduled_turns": 6,
+        "proposals": 6,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 2,
+        "unmet_units": 4,
+        "agents_affected": 4,
+        "food_units": 16,
+        "produced_units": 6,
+        "consumed_units": 8,
+        "agent_coins": 166,
+        "treasury_coins": 44,
+        "holdings": {
+          "A1": {
+            "food": 11,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 5,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 1
+          },
+          "A4": {
+            "food": 0,
+            "coins": 29,
+            "unmet": 1
+          },
+          "A5": {
+            "food": 0,
+            "coins": 24,
+            "unmet": 1
+          },
+          "A6": {
+            "food": 0,
+            "coins": 24,
+            "unmet": 1
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 4,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7291666666666666,
+        "evidence_citations": 0,
+        "scheduled_turns": 12,
+        "proposals": 12,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 3,
+        "unmet_units": 8,
+        "agents_affected": 4,
+        "food_units": 17,
+        "produced_units": 9,
+        "consumed_units": 10,
+        "agent_coins": 174,
+        "treasury_coins": 36,
+        "holdings": {
+          "A1": {
+            "food": 13,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 4,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 36,
+            "unmet": 2
+          },
+          "A4": {
+            "food": 0,
+            "coins": 31,
+            "unmet": 2
+          },
+          "A5": {
+            "food": 0,
+            "coins": 26,
+            "unmet": 2
+          },
+          "A6": {
+            "food": 0,
+            "coins": 26,
+            "unmet": 2
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 6,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7549019607843137,
+        "evidence_citations": 0,
+        "scheduled_turns": 18,
+        "proposals": 18,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 4,
+        "unmet_units": 12,
+        "agents_affected": 4,
+        "food_units": 18,
+        "produced_units": 12,
+        "consumed_units": 12,
+        "agent_coins": 182,
+        "treasury_coins": 28,
+        "holdings": {
+          "A1": {
+            "food": 15,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 3,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 38,
+            "unmet": 3
+          },
+          "A4": {
+            "food": 0,
+            "coins": 33,
+            "unmet": 3
+          },
+          "A5": {
+            "food": 0,
+            "coins": 28,
+            "unmet": 3
+          },
+          "A6": {
+            "food": 0,
+            "coins": 28,
+            "unmet": 3
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 8,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7777777777777778,
+        "evidence_citations": 0,
+        "scheduled_turns": 24,
+        "proposals": 24,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 5,
+        "unmet_units": 16,
+        "agents_affected": 4,
+        "food_units": 19,
+        "produced_units": 15,
+        "consumed_units": 14,
+        "agent_coins": 190,
+        "treasury_coins": 20,
+        "holdings": {
+          "A1": {
+            "food": 17,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 40,
+            "unmet": 4
+          },
+          "A4": {
+            "food": 0,
+            "coins": 35,
+            "unmet": 4
+          },
+          "A5": {
+            "food": 0,
+            "coins": 30,
+            "unmet": 4
+          },
+          "A6": {
+            "food": 0,
+            "coins": 30,
+            "unmet": 4
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 10,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7982456140350878,
+        "evidence_citations": 0,
+        "scheduled_turns": 30,
+        "proposals": 30,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 6,
+        "unmet_units": 20,
+        "agents_affected": 4,
+        "food_units": 20,
+        "produced_units": 18,
+        "consumed_units": 16,
+        "agent_coins": 198,
+        "treasury_coins": 12,
+        "holdings": {
+          "A1": {
+            "food": 18,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 42,
+            "unmet": 5
+          },
+          "A4": {
+            "food": 0,
+            "coins": 37,
+            "unmet": 5
+          },
+          "A5": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 5
+          },
+          "A6": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 5
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 11,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.8,
+        "evidence_citations": 0,
+        "scheduled_turns": 36,
+        "proposals": 36,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 7,
+        "unmet_units": 24,
+        "agents_affected": 4,
+        "food_units": 21,
+        "produced_units": 21,
+        "consumed_units": 18,
+        "agent_coins": 206,
+        "treasury_coins": 4,
+        "holdings": {
+          "A1": {
+            "food": 19,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 44,
+            "unmet": 6
+          },
+          "A4": {
+            "food": 0,
+            "coins": 39,
+            "unmet": 6
+          },
+          "A5": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 6
+          },
+          "A6": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 6
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 12,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.8015873015873016,
+        "evidence_citations": 0,
+        "scheduled_turns": 42,
+        "proposals": 42,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 8,
+        "unmet_units": 28,
+        "agents_affected": 4,
+        "food_units": 22,
+        "produced_units": 24,
+        "consumed_units": 20,
+        "agent_coins": 210,
+        "treasury_coins": 0,
+        "holdings": {
+          "A1": {
+            "food": 20,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 46,
+            "unmet": 7
+          },
+          "A4": {
+            "food": 0,
+            "coins": 41,
+            "unmet": 7
+          },
+          "A5": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 7
+          },
+          "A6": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 7
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 13,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.803030303030303,
+        "evidence_citations": 0,
+        "scheduled_turns": 48,
+        "proposals": 48,
+        "rejected": 2,
+        "provider_failures": 0,
+        "invalid_rate": 0.041666666666666664
+      }
+    ],
+    "B": [
+      {
+        "round": 1,
+        "unmet_units": 0,
+        "agents_affected": 0,
+        "food_units": 15,
+        "produced_units": 3,
+        "consumed_units": 6,
+        "agent_coins": 158,
+        "treasury_coins": 52,
+        "holdings": {
+          "A1": {
+            "food": 9,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 6,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 0
+          },
+          "A4": {
+            "food": 0,
+            "coins": 27,
+            "unmet": 0
+          },
+          "A5": {
+            "food": 0,
+            "coins": 22,
+            "unmet": 0
+          },
+          "A6": {
+            "food": 0,
+            "coins": 22,
+            "unmet": 0
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 2,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7,
+        "evidence_citations": 0,
+        "scheduled_turns": 6,
+        "proposals": 6,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 2,
+        "unmet_units": 4,
+        "agents_affected": 4,
+        "food_units": 16,
+        "produced_units": 6,
+        "consumed_units": 8,
+        "agent_coins": 166,
+        "treasury_coins": 44,
+        "holdings": {
+          "A1": {
+            "food": 11,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 5,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 1
+          },
+          "A4": {
+            "food": 0,
+            "coins": 29,
+            "unmet": 1
+          },
+          "A5": {
+            "food": 0,
+            "coins": 24,
+            "unmet": 1
+          },
+          "A6": {
+            "food": 0,
+            "coins": 24,
+            "unmet": 1
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 4,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7291666666666666,
+        "evidence_citations": 0,
+        "scheduled_turns": 12,
+        "proposals": 12,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 3,
+        "unmet_units": 8,
+        "agents_affected": 4,
+        "food_units": 17,
+        "produced_units": 9,
+        "consumed_units": 10,
+        "agent_coins": 174,
+        "treasury_coins": 36,
+        "holdings": {
+          "A1": {
+            "food": 13,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 4,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 36,
+            "unmet": 2
+          },
+          "A4": {
+            "food": 0,
+            "coins": 31,
+            "unmet": 2
+          },
+          "A5": {
+            "food": 0,
+            "coins": 26,
+            "unmet": 2
+          },
+          "A6": {
+            "food": 0,
+            "coins": 26,
+            "unmet": 2
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 6,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7549019607843137,
+        "evidence_citations": 0,
+        "scheduled_turns": 18,
+        "proposals": 18,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 4,
+        "unmet_units": 12,
+        "agents_affected": 4,
+        "food_units": 18,
+        "produced_units": 12,
+        "consumed_units": 12,
+        "agent_coins": 182,
+        "treasury_coins": 28,
+        "holdings": {
+          "A1": {
+            "food": 15,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 3,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 38,
+            "unmet": 3
+          },
+          "A4": {
+            "food": 0,
+            "coins": 33,
+            "unmet": 3
+          },
+          "A5": {
+            "food": 0,
+            "coins": 28,
+            "unmet": 3
+          },
+          "A6": {
+            "food": 0,
+            "coins": 28,
+            "unmet": 3
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 8,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7777777777777778,
+        "evidence_citations": 0,
+        "scheduled_turns": 24,
+        "proposals": 24,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 5,
+        "unmet_units": 16,
+        "agents_affected": 4,
+        "food_units": 19,
+        "produced_units": 15,
+        "consumed_units": 14,
+        "agent_coins": 190,
+        "treasury_coins": 20,
+        "holdings": {
+          "A1": {
+            "food": 17,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 40,
+            "unmet": 4
+          },
+          "A4": {
+            "food": 0,
+            "coins": 35,
+            "unmet": 4
+          },
+          "A5": {
+            "food": 0,
+            "coins": 30,
+            "unmet": 4
+          },
+          "A6": {
+            "food": 0,
+            "coins": 30,
+            "unmet": 4
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 10,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.7982456140350878,
+        "evidence_citations": 0,
+        "scheduled_turns": 30,
+        "proposals": 30,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 6,
+        "unmet_units": 20,
+        "agents_affected": 4,
+        "food_units": 20,
+        "produced_units": 18,
+        "consumed_units": 16,
+        "agent_coins": 198,
+        "treasury_coins": 12,
+        "holdings": {
+          "A1": {
+            "food": 18,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 42,
+            "unmet": 5
+          },
+          "A4": {
+            "food": 0,
+            "coins": 37,
+            "unmet": 5
+          },
+          "A5": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 5
+          },
+          "A6": {
+            "food": 0,
+            "coins": 32,
+            "unmet": 5
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 11,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.8,
+        "evidence_citations": 0,
+        "scheduled_turns": 36,
+        "proposals": 36,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 7,
+        "unmet_units": 24,
+        "agents_affected": 4,
+        "food_units": 21,
+        "produced_units": 21,
+        "consumed_units": 18,
+        "agent_coins": 206,
+        "treasury_coins": 4,
+        "holdings": {
+          "A1": {
+            "food": 19,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 44,
+            "unmet": 6
+          },
+          "A4": {
+            "food": 0,
+            "coins": 39,
+            "unmet": 6
+          },
+          "A5": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 6
+          },
+          "A6": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 6
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 12,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.8015873015873016,
+        "evidence_citations": 0,
+        "scheduled_turns": 42,
+        "proposals": 42,
+        "rejected": 0,
+        "provider_failures": 0,
+        "invalid_rate": 0.0
+      },
+      {
+        "round": 8,
+        "unmet_units": 28,
+        "agents_affected": 4,
+        "food_units": 22,
+        "produced_units": 24,
+        "consumed_units": 20,
+        "agent_coins": 210,
+        "treasury_coins": 0,
+        "holdings": {
+          "A1": {
+            "food": 20,
+            "coins": 20,
+            "unmet": 0
+          },
+          "A2": {
+            "food": 2,
+            "coins": 35,
+            "unmet": 0
+          },
+          "A3": {
+            "food": 0,
+            "coins": 46,
+            "unmet": 7
+          },
+          "A4": {
+            "food": 0,
+            "coins": 41,
+            "unmet": 7
+          },
+          "A5": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 7
+          },
+          "A6": {
+            "food": 0,
+            "coins": 34,
+            "unmet": 7
+          }
+        },
+        "trades": 0,
+        "trade_units": 0,
+        "gift_units": 13,
+        "fulfillment_units": 0,
+        "commitments_created": 0,
+        "open": 0,
+        "partial": 0,
+        "fulfilled": 0,
+        "broken": 0,
+        "fulfillment_rate": null,
+        "mean_trust": 50,
+        "trust_edges": [
+          {
+            "observer": "A1",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A1",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A2",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A3",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A5",
+            "score": 50
+          },
+          {
+            "observer": "A4",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A5",
+            "subject": "A6",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A1",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A2",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A3",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A4",
+            "score": 50
+          },
+          {
+            "observer": "A6",
+            "subject": "A5",
+            "score": 50
+          }
+        ],
+        "food_gini": 0.803030303030303,
+        "evidence_citations": 0,
+        "scheduled_turns": 48,
+        "proposals": 48,
+        "rejected": 2,
+        "provider_failures": 0,
+        "invalid_rate": 0.041666666666666664
+      }
+    ]
+  },
+  "completed_pairs": 1,
+  "mode": "rule_based",
+  "deltas_by_round": [
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    },
+    {
+      "unmet_units": 0,
+      "agents_affected": 0,
+      "food_units": 0,
+      "produced_units": 0,
+      "consumed_units": 0,
+      "agent_coins": 0,
+      "treasury_coins": 0,
+      "trades": 0,
+      "trade_units": 0,
+      "gift_units": 0,
+      "fulfillment_units": 0,
+      "commitments_created": 0,
+      "open": 0,
+      "partial": 0,
+      "fulfilled": 0,
+      "broken": 0,
+      "fulfillment_rate": null,
+      "mean_trust": 0,
+      "food_gini": 0.0,
+      "evidence_citations": 0,
+      "scheduled_turns": 0,
+      "proposals": 0,
+      "rejected": 0,
+      "provider_failures": 0,
+      "invalid_rate": 0.0
+    }
+  ],
+  "final_delta": {
+    "unmet_units": 0,
+    "agents_affected": 0,
+    "food_units": 0,
+    "produced_units": 0,
+    "consumed_units": 0,
+    "agent_coins": 0,
+    "treasury_coins": 0,
+    "trades": 0,
+    "trade_units": 0,
+    "gift_units": 0,
+    "fulfillment_units": 0,
+    "commitments_created": 0,
+    "open": 0,
+    "partial": 0,
+    "fulfilled": 0,
+    "broken": 0,
+    "fulfillment_rate": null,
+    "mean_trust": 0,
+    "food_gini": 0.0,
+    "evidence_citations": 0,
+    "scheduled_turns": 0,
+    "proposals": 0,
+    "rejected": 0,
+    "provider_failures": 0,
+    "invalid_rate": 0.0
+  },
+  "history": {
+    "A": [
+      {
+        "sequence": 1,
+        "round": 0,
+        "kind": "CLAIM_PUBLISHED",
+        "actor": null,
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": {
+          "id": "claim-harvest",
+          "key": "reduced_harvest",
+          "source": "town-board",
+          "text": "The next eight rounds may have reduced harvests."
+        },
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 2,
+        "round": 0,
+        "kind": "HARVEST_RECORDED",
+        "actor": null,
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": {
+          "id": "evidence-harvest",
+          "claim_id": "claim-harvest",
+          "issuer_id": "harvest-register",
+          "source_event_id": "harvest-source-1",
+          "issued_round": 0,
+          "kind": "harvest_record",
+          "status": "supported",
+          "payload": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "visibility_policy": "explicit_grants"
+        },
+        "source_id": "harvest-source-1",
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 3,
+        "round": 1,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 4,
+        "round": 1,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 5,
+        "round": 1,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 6,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 7,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 8,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 9,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 10,
+        "round": 1,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A3",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A4",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A5",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A6",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 11,
+        "round": 2,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 12,
+        "round": 2,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 13,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 14,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 15,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 16,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 17,
+        "round": 2,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 18,
+        "round": 2,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 19,
+        "round": 3,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 20,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 21,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 22,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 23,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 24,
+        "round": 3,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 25,
+        "round": 3,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 26,
+        "round": 3,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 27,
+        "round": 4,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 28,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 29,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 30,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 31,
+        "round": 4,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 32,
+        "round": 4,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 33,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 34,
+        "round": 4,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 35,
+        "round": 5,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 36,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 37,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 38,
+        "round": 5,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 39,
+        "round": 5,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 40,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 41,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 42,
+        "round": 5,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 43,
+        "round": 6,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 44,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 45,
+        "round": 6,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 46,
+        "round": 6,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 47,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 48,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 49,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 50,
+        "round": 6,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 51,
+        "round": 7,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 52,
+        "round": 7,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 53,
+        "round": 7,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 54,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 55,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 56,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 57,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 58,
+        "round": 7,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 59,
+        "round": 8,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 60,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 61,
+        "round": 8,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 62,
+        "round": 8,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 63,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A5",
+        "reason": "insufficient_treasury",
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 64,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A6",
+        "reason": "insufficient_treasury",
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 65,
+        "round": 8,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 66,
+        "round": 8,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      }
+    ],
+    "B": [
+      {
+        "sequence": 1,
+        "round": 0,
+        "kind": "CLAIM_PUBLISHED",
+        "actor": null,
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": {
+          "id": "claim-harvest",
+          "key": "reduced_harvest",
+          "source": "town-board",
+          "text": "The next eight rounds may have reduced harvests."
+        },
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 2,
+        "round": 0,
+        "kind": "HARVEST_RECORDED",
+        "actor": null,
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": {
+          "id": "evidence-harvest",
+          "claim_id": "claim-harvest",
+          "issuer_id": "harvest-register",
+          "source_event_id": "harvest-source-1",
+          "issued_round": 0,
+          "kind": "harvest_record",
+          "status": "supported",
+          "payload": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+          ],
+          "visibility_policy": "explicit_grants"
+        },
+        "source_id": "harvest-source-1",
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 3,
+        "round": 0,
+        "kind": "EVIDENCE_GRANTED",
+        "actor": null,
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": {
+          "evidence_id": "evidence-harvest",
+          "grantee": null
+        },
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 4,
+        "round": 1,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 5,
+        "round": 1,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 6,
+        "round": 1,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 7,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 8,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 9,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 10,
+        "round": 1,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 11,
+        "round": 1,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A3",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A4",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A5",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A6",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 12,
+        "round": 2,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 13,
+        "round": 2,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 14,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 15,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 16,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 17,
+        "round": 2,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 18,
+        "round": 2,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 19,
+        "round": 2,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 20,
+        "round": 3,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 21,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 22,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 23,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 24,
+        "round": 3,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 25,
+        "round": 3,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 26,
+        "round": 3,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 27,
+        "round": 3,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 28,
+        "round": 4,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 29,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 30,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 31,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 32,
+        "round": 4,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 33,
+        "round": 4,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 34,
+        "round": 4,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 35,
+        "round": 4,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 36,
+        "round": 5,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 37,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 38,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 39,
+        "round": 5,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 40,
+        "round": 5,
+        "kind": "GIVE_FOOD",
+        "actor": "A2",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": "A1",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 41,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 42,
+        "round": 5,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 43,
+        "round": 5,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 44,
+        "round": 6,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 45,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 46,
+        "round": 6,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 47,
+        "round": 6,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 48,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 49,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 50,
+        "round": 6,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 51,
+        "round": 6,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 52,
+        "round": 7,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 53,
+        "round": 7,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 54,
+        "round": 7,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 55,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 56,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 57,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A5",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A5",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 58,
+        "round": 7,
+        "kind": "WORK",
+        "actor": "A6",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A6",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 59,
+        "round": 7,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 60,
+        "round": 8,
+        "kind": "ROUND_STARTED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": null,
+            "destination": "A1",
+            "amount": 3
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 61,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A2",
+        "reason": null,
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 62,
+        "round": 8,
+        "kind": "WORK",
+        "actor": "A3",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A3",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 63,
+        "round": 8,
+        "kind": "WORK",
+        "actor": "A4",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "coins",
+            "source": "@treasury",
+            "destination": "A4",
+            "amount": 2
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 64,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A5",
+        "reason": "insufficient_treasury",
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 65,
+        "round": 8,
+        "kind": "WAIT",
+        "actor": "A6",
+        "reason": "insufficient_treasury",
+        "entries": [],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 66,
+        "round": 8,
+        "kind": "GIVE_FOOD",
+        "actor": "A1",
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": "A2",
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      },
+      {
+        "sequence": 67,
+        "round": 8,
+        "kind": "ROUND_SETTLED",
+        "actor": null,
+        "reason": null,
+        "entries": [
+          {
+            "asset": "food",
+            "source": "A1",
+            "destination": null,
+            "amount": 1
+          },
+          {
+            "asset": "food",
+            "source": "A2",
+            "destination": null,
+            "amount": 1
+          }
+        ],
+        "position": null,
+        "offers": [],
+        "hungry": [
+          "A3",
+          "A4",
+          "A5",
+          "A6"
+        ],
+        "claim": null,
+        "evidence": null,
+        "source_id": null,
+        "grant": null,
+        "message": null,
+        "commitments": [],
+        "note": null
+      }
+    ]
+  },
+  "integrity": {
+    "A": {
+      "head": 66,
+      "head_hash": "81e13d33a68777b261869f2d7faf2eaa42400263f9fd1a365d92db55f5e4fe3c",
+      "state_hash": "bd6be568c248087b3949dbd818ae04ca224cc24be6436b7d7748cb952e950c98",
+      "run": "85ceec58fe32404ab2a0bf5534c2efb4-A",
+      "stream": [
+        {
+          "seq": 1,
+          "schema": 1,
+          "command": "setup",
+          "chain": "e90adadfa0f6900d6945069ebede3351ab94c5c5694b9d81f062293f8ef75d48"
+        },
+        {
+          "seq": 2,
+          "schema": 1,
+          "command": "setup",
+          "chain": "37165b4fd2a970ab6e34b0ccaf55104e82ba650650d73baf698c49d8aaf54e29"
+        },
+        {
+          "seq": 3,
+          "schema": 1,
+          "command": "step-2",
+          "chain": "eb2d103e8af2e85316c2082e1d76e4297ca4904ca8ab5e73bcf4510a9fb9ba60"
+        },
+        {
+          "seq": 4,
+          "schema": 1,
+          "command": "step-3",
+          "chain": "d6fcd4572f5fb6294253c536e2c2e361bf9c971150bbb346d89227871a84cc4c"
+        },
+        {
+          "seq": 5,
+          "schema": 1,
+          "command": "step-4",
+          "chain": "40e118f1ea5a25ce81821bdd89719d22495c5ca0ced2b1f5fd63f0a7a73a92ef"
+        },
+        {
+          "seq": 6,
+          "schema": 1,
+          "command": "step-5",
+          "chain": "1661a9ef679d8a5b3951967f8a367c3e9c0aee33064863e553ba87a84a9ba308"
+        },
+        {
+          "seq": 7,
+          "schema": 1,
+          "command": "step-6",
+          "chain": "abc2b4adcb4345ca1b7fa7c2b25b4120a2fbadc5a0dec753f49f204f5f251b7e"
+        },
+        {
+          "seq": 8,
+          "schema": 1,
+          "command": "step-7",
+          "chain": "cd1b0371e546ce592716c8ebbd7cd25b275a9fd135427c0a0cd369a9d1ea3bf0"
+        },
+        {
+          "seq": 9,
+          "schema": 1,
+          "command": "step-8",
+          "chain": "7ec21c8f43bc6d08fdae25251dc945caf9db3005e35e55b69aaa2f862d696ca5"
+        },
+        {
+          "seq": 10,
+          "schema": 1,
+          "command": "step-9",
+          "chain": "bcfbb3c9c8f829a2907db1f2ea226012d61f156afa0f938972111336e2cdb94f"
+        },
+        {
+          "seq": 11,
+          "schema": 1,
+          "command": "step-10",
+          "chain": "0d48f81c19b833888c9ae5ca673c01e50c4542587ca7beb42bb3a494022d8ca6"
+        },
+        {
+          "seq": 12,
+          "schema": 1,
+          "command": "step-11",
+          "chain": "8dd66a65571cbb1e6f98b6cffbb8579d8e448070af3bff79a9ea2cde118d300f"
+        },
+        {
+          "seq": 13,
+          "schema": 1,
+          "command": "step-12",
+          "chain": "45e5857820ecd1c6de5c1948ee5a4da96632d6bf99ce63b81e215425bc1d1b7a"
+        },
+        {
+          "seq": 14,
+          "schema": 1,
+          "command": "step-13",
+          "chain": "9db93d88a35c1a35cdd5a0876f4305a03ec2dad10cd2c53b65f5a643a00aa3c2"
+        },
+        {
+          "seq": 15,
+          "schema": 1,
+          "command": "step-14",
+          "chain": "c9b774e4604296ea068914a6546709697c1597878062160539ab8039e56f1bb9"
+        },
+        {
+          "seq": 16,
+          "schema": 1,
+          "command": "step-15",
+          "chain": "f3165bc949a08e576ecf52cf84a8f431d664e297f0cfadab9dcad93fbf67ffab"
+        },
+        {
+          "seq": 17,
+          "schema": 1,
+          "command": "step-16",
+          "chain": "a9829b59bc702f3d04c7b8db6807a61b8f9c7763cab9e4c6896586d60c7e2673"
+        },
+        {
+          "seq": 18,
+          "schema": 1,
+          "command": "step-17",
+          "chain": "188cf90316248fc168ab37e1a7d354c3b371b49765ff2e253d9e18081e688198"
+        },
+        {
+          "seq": 19,
+          "schema": 1,
+          "command": "step-18",
+          "chain": "c178849cdb6ccd7f0b8e9a61accbec99b9e5e60f856d605dfa32b986dbb7328f"
+        },
+        {
+          "seq": 20,
+          "schema": 1,
+          "command": "step-19",
+          "chain": "9872cd6e77380848af9efa8ef35996b819c305d022a841783a16631af19e2cb9"
+        },
+        {
+          "seq": 21,
+          "schema": 1,
+          "command": "step-20",
+          "chain": "7ee94469a9e98151283f8517ce5f157e94970f5ace4a5e128685f61effeffa99"
+        },
+        {
+          "seq": 22,
+          "schema": 1,
+          "command": "step-21",
+          "chain": "e6286253d177b32a6ee8eef9d17aebaff41abc7d776c574d5be31735f740f16c"
+        },
+        {
+          "seq": 23,
+          "schema": 1,
+          "command": "step-22",
+          "chain": "fa62f0eece05e999b411f830d0cf33f3ea1139f5cbb8547a03a0462abeb0b302"
+        },
+        {
+          "seq": 24,
+          "schema": 1,
+          "command": "step-23",
+          "chain": "816e6f925159c5c548118312d1c8cd811a69c10a2eafadfdd3cc81ff39c07431"
+        },
+        {
+          "seq": 25,
+          "schema": 1,
+          "command": "step-24",
+          "chain": "0a91c40966f65dd204f1fa68b2f98ca96fd65333faf0b8f297e65a76b76e4d0b"
+        },
+        {
+          "seq": 26,
+          "schema": 1,
+          "command": "step-25",
+          "chain": "579dba217317c291419ee0b569db80a10d2ab3462ee743de052f495d84e0af5a"
+        },
+        {
+          "seq": 27,
+          "schema": 1,
+          "command": "step-26",
+          "chain": "33c68cb75749eb68be0e84115e5cc0a4b03b2d1e420deb3adfeac5233d216676"
+        },
+        {
+          "seq": 28,
+          "schema": 1,
+          "command": "step-27",
+          "chain": "620346bfa64cad071125ae323fb4922d3012553b2d8d8e9dca9c9e703f080875"
+        },
+        {
+          "seq": 29,
+          "schema": 1,
+          "command": "step-28",
+          "chain": "ef1c705cff8429bdcee90bc8f040708092fa439144c08c806365b41c56bdb8ca"
+        },
+        {
+          "seq": 30,
+          "schema": 1,
+          "command": "step-29",
+          "chain": "6b288beaa9df0e35b3b8649fbfea9db56753e27a002818ff89c069943568d783"
+        },
+        {
+          "seq": 31,
+          "schema": 1,
+          "command": "step-30",
+          "chain": "91b0507fac59b7f3b17313b599602d649df596bb0e5163c94296ad93c120a934"
+        },
+        {
+          "seq": 32,
+          "schema": 1,
+          "command": "step-31",
+          "chain": "67624e3956f587b0ac784a189b7abe61028815db99dc6ce17bdc4a35e7d04570"
+        },
+        {
+          "seq": 33,
+          "schema": 1,
+          "command": "step-32",
+          "chain": "44ef62e619d35c8af77bf52518bb20305f08604afa24ef6e7d1d172fd656bd33"
+        },
+        {
+          "seq": 34,
+          "schema": 1,
+          "command": "step-33",
+          "chain": "32230444a009082521c646ea89e59241d76b168eb3a547f9cde4333796041416"
+        },
+        {
+          "seq": 35,
+          "schema": 1,
+          "command": "step-34",
+          "chain": "144dfa8db28eac1293aeff2785edd711baafb272058092095b37fb563648c098"
+        },
+        {
+          "seq": 36,
+          "schema": 1,
+          "command": "step-35",
+          "chain": "48c3fbe3f18192b79b6be935bf49c1586f2aeaf898a51a7f7e63afaba3b8e3ec"
+        },
+        {
+          "seq": 37,
+          "schema": 1,
+          "command": "step-36",
+          "chain": "fbc0d680e3a5cb25a8ff54c138ef2f4c4d64a06c64f18b73bb19f96c5fd5d275"
+        },
+        {
+          "seq": 38,
+          "schema": 1,
+          "command": "step-37",
+          "chain": "7cff97aafd2c0cfb277149141e7ba7aee0980ca8339e198d41ee728f2565f765"
+        },
+        {
+          "seq": 39,
+          "schema": 1,
+          "command": "step-38",
+          "chain": "33c8a1f91785d14a1c76cb89f21ecf3fd25cad270bf51d840390637feb193b25"
+        },
+        {
+          "seq": 40,
+          "schema": 1,
+          "command": "step-39",
+          "chain": "cd7114b5f0c05bf2f191bcba9d1d1955ac12ab67877369ee49c10c73eef3031d"
+        },
+        {
+          "seq": 41,
+          "schema": 1,
+          "command": "step-40",
+          "chain": "9eb37629aa8c6ccb33e6805946e0337c5440e493140d4788a9f92b370009616b"
+        },
+        {
+          "seq": 42,
+          "schema": 1,
+          "command": "step-41",
+          "chain": "66b9df4322125948fec0e5e3c510d9697116e2223801dd76a16b92ab60518019"
+        },
+        {
+          "seq": 43,
+          "schema": 1,
+          "command": "step-42",
+          "chain": "13ceb8e43ef4852b7320640e8ac730f2635be9667e62fdf092629b5472e435c6"
+        },
+        {
+          "seq": 44,
+          "schema": 1,
+          "command": "step-43",
+          "chain": "50eaaab7280d68746947182d81e729a950c49a864a8ac33bea4dff8676377274"
+        },
+        {
+          "seq": 45,
+          "schema": 1,
+          "command": "step-44",
+          "chain": "1b01656399656fb0ae87d6850c74e3f0f73d61f66b9a45a15d9c18b083bb1b30"
+        },
+        {
+          "seq": 46,
+          "schema": 1,
+          "command": "step-45",
+          "chain": "a9bfba3b00c8fcd401dfc860c5a9ebbbb5e793846e0b85f510e71829f568cdfe"
+        },
+        {
+          "seq": 47,
+          "schema": 1,
+          "command": "step-46",
+          "chain": "9e66c0c01278018ca0b33623cdcb8ebe6051bcaae7c5b0df5541b9c14c108ad5"
+        },
+        {
+          "seq": 48,
+          "schema": 1,
+          "command": "step-47",
+          "chain": "6c2f018f90d9f160c6afaecbf9a139a126fff1c0bc456d40e2bfb6f8a7853afe"
+        },
+        {
+          "seq": 49,
+          "schema": 1,
+          "command": "step-48",
+          "chain": "c00dcbca6a76a6146a5187766d4dcfc4449574cf90019d813f30282b06b8e851"
+        },
+        {
+          "seq": 50,
+          "schema": 1,
+          "command": "step-49",
+          "chain": "5138a6705730bcfba270e7ed99f63e371e02bdd23dc24e83d83057f9523157a3"
+        },
+        {
+          "seq": 51,
+          "schema": 1,
+          "command": "step-50",
+          "chain": "929f917b61af58fdd52fc44dccfb00a901ad568c0dfa950c0099561536149cbe"
+        },
+        {
+          "seq": 52,
+          "schema": 1,
+          "command": "step-51",
+          "chain": "dfaf23e9b7a67cd9d71b52ba952b67cd37e243e4e1848fe97a4db54ac25aed92"
+        },
+        {
+          "seq": 53,
+          "schema": 1,
+          "command": "step-52",
+          "chain": "814e266ae66311ee2af5bd67fa410fada5ed47d6c4ebd701eea7bd91f794ee62"
+        },
+        {
+          "seq": 54,
+          "schema": 1,
+          "command": "step-53",
+          "chain": "0c1c4fb7866181696bd27e6507012896a52f9036f4b381da5f4f94dae0341d94"
+        },
+        {
+          "seq": 55,
+          "schema": 1,
+          "command": "step-54",
+          "chain": "b30074dcf79afa27aabd6686fe294ce2e5f6fef011d98977d781771f569502bd"
+        },
+        {
+          "seq": 56,
+          "schema": 1,
+          "command": "step-55",
+          "chain": "2ce8a3a590d8216265e62dc20fd813bc38c469a1f5f79e7c936adacc34814712"
+        },
+        {
+          "seq": 57,
+          "schema": 1,
+          "command": "step-56",
+          "chain": "e0b04a8106236938e4c7ef08704890aaf96f053f2a87639c35d1def467d51726"
+        },
+        {
+          "seq": 58,
+          "schema": 1,
+          "command": "step-57",
+          "chain": "c97902e43744660623366f684dd7fa7d04336300bab94b9c4b55f2a2986ec8df"
+        },
+        {
+          "seq": 59,
+          "schema": 1,
+          "command": "step-58",
+          "chain": "adfb4fa2854838e0a24925a7ccf5d8e8bb4d3f02e20b86dd42acb4d2068d2ae0"
+        },
+        {
+          "seq": 60,
+          "schema": 1,
+          "command": "step-59",
+          "chain": "9970b56a5b287d1c6dd09b0256f8a4863348245ae933483c22f3b899e3cf9f74"
+        },
+        {
+          "seq": 61,
+          "schema": 1,
+          "command": "step-60",
+          "chain": "0bb8ecb53ffcb69e5c5fc9ee0aff588e48e56c1bc107aae5538a2a2bce42b903"
+        },
+        {
+          "seq": 62,
+          "schema": 1,
+          "command": "step-61",
+          "chain": "c137ccb3a76dbbf51932cfb1c9ee2a89eba205052368de61c552d1fa98462bfc"
+        },
+        {
+          "seq": 63,
+          "schema": 1,
+          "command": "step-62",
+          "chain": "debeb03aaec09a7aa462aa93ba2ee27cad06d078a87a7a54a4109cf111f0d6ff"
+        },
+        {
+          "seq": 64,
+          "schema": 1,
+          "command": "step-63",
+          "chain": "34c0b56bc23901575590dc9cda9fc67dbcca2cc00ac5104aa28957e6afee8356"
+        },
+        {
+          "seq": 65,
+          "schema": 1,
+          "command": "step-64",
+          "chain": "3babadac759289785a830fb26d921d6430487bfca61b2b03f57e45550f8f61b8"
+        },
+        {
+          "seq": 66,
+          "schema": 1,
+          "command": "step-65",
+          "chain": "81e13d33a68777b261869f2d7faf2eaa42400263f9fd1a365d92db55f5e4fe3c"
+        }
+      ],
+      "checkpoints": [
+        {
+          "seq": 0,
+          "schema": 1,
+          "digest": "c6c91f1c5d98aed3e6220763d10aedb0a3053542590013c657bd2e070899f156"
+        },
+        {
+          "seq": 1,
+          "schema": 1,
+          "digest": "f78712bcecc4e080e232a8ad99492ec549ef49271ac489aa528efc50f57931e2"
+        },
+        {
+          "seq": 2,
+          "schema": 1,
+          "digest": "74dcef0e80412b8a9de41308953bc9ca3a303dc22e6087865a02dfbbf0e51197"
+        },
+        {
+          "seq": 10,
+          "schema": 1,
+          "digest": "2d69697b7948bf13b38d773e64f811ba7a1ab94b1682b26c4746c229b1b89bc1"
+        },
+        {
+          "seq": 18,
+          "schema": 1,
+          "digest": "1b16472772af512d5f589dad3cd757c179a2862b42bde73fde2652c80f4bd3d5"
+        },
+        {
+          "seq": 26,
+          "schema": 1,
+          "digest": "6435de6932b4d77e506bf8f5633cd2e0c19cca238f6ca398d5b4b1f3788a1690"
+        },
+        {
+          "seq": 34,
+          "schema": 1,
+          "digest": "11527c8deb70499548cd3764bbb47233e74e51b6ed0f5262e1b042d9c9dadf20"
+        },
+        {
+          "seq": 42,
+          "schema": 1,
+          "digest": "ebfd5b376256c7e6174562489691ca28c7a8346c9b40fec92d42d03d68052ef7"
+        },
+        {
+          "seq": 50,
+          "schema": 1,
+          "digest": "db149cb1f120b239bac027cfc04fa3cdad07371f51dd0c5e7c8eccf449f4c314"
+        },
+        {
+          "seq": 58,
+          "schema": 1,
+          "digest": "5f0fbcfa4bb54b85a0bf53573f30ad72abcc929786a5b783409099cb4f06fa67"
+        },
+        {
+          "seq": 66,
+          "schema": 1,
+          "digest": "bd6be568c248087b3949dbd818ae04ca224cc24be6436b7d7748cb952e950c98"
+        }
+      ]
+    },
+    "B": {
+      "head": 67,
+      "head_hash": "313ef4eabf27f367167d91cc6c8cdaeb30e0b7154d637fd069e61e691c147b36",
+      "state_hash": "1553892ab5fb8e512e1ee12566260aad085859bdd4e432546c13ca8fc7094cae",
+      "run": "85ceec58fe32404ab2a0bf5534c2efb4-B",
+      "stream": [
+        {
+          "seq": 1,
+          "schema": 1,
+          "command": "setup",
+          "chain": "e90adadfa0f6900d6945069ebede3351ab94c5c5694b9d81f062293f8ef75d48"
+        },
+        {
+          "seq": 2,
+          "schema": 1,
+          "command": "setup",
+          "chain": "37165b4fd2a970ab6e34b0ccaf55104e82ba650650d73baf698c49d8aaf54e29"
+        },
+        {
+          "seq": 3,
+          "schema": 1,
+          "command": "treatment",
+          "chain": "00310ba1d1838d732d3b9283864fc8509bac1473ae9e178dc502036512107e5e"
+        },
+        {
+          "seq": 4,
+          "schema": 1,
+          "command": "step-3",
+          "chain": "4c33d3af02d0756cc5489f0e7e6c4c075ea214ab375449926a27d339ea8f6f9e"
+        },
+        {
+          "seq": 5,
+          "schema": 1,
+          "command": "step-4",
+          "chain": "3a0aa6dff0201c2c4e7ac856f60f0a3ab8584a152108256b2864c90deee443bf"
+        },
+        {
+          "seq": 6,
+          "schema": 1,
+          "command": "step-5",
+          "chain": "8cfcd49c0be5730ab5651834e2d80b709f1830872cabb126af490b7a70b5d4bc"
+        },
+        {
+          "seq": 7,
+          "schema": 1,
+          "command": "step-6",
+          "chain": "a689bae4709ce947faa4d797f2015181ffe48054fb9b030ca17941c2c88839ca"
+        },
+        {
+          "seq": 8,
+          "schema": 1,
+          "command": "step-7",
+          "chain": "086b20837bf53e9b63c4c50c265b80767fdadeda4cf354f3f08c4324b75bbcdb"
+        },
+        {
+          "seq": 9,
+          "schema": 1,
+          "command": "step-8",
+          "chain": "baa77e543a32338b63e06d3acf701e8ccb15a1c06081e1671dc154769a0c61e6"
+        },
+        {
+          "seq": 10,
+          "schema": 1,
+          "command": "step-9",
+          "chain": "e5a89593d5583ab863f923ed96b9eb282c52179d6d2e24e8f7ce0daa74f18f68"
+        },
+        {
+          "seq": 11,
+          "schema": 1,
+          "command": "step-10",
+          "chain": "f76a16ecc212f9376f588f7e851521148078aa4594f55114825219f7b6ec0973"
+        },
+        {
+          "seq": 12,
+          "schema": 1,
+          "command": "step-11",
+          "chain": "e2abbc5d6c25ae286ca6acb9f7a84c23f4f6e373c286cf5b3bd716f67df08fb1"
+        },
+        {
+          "seq": 13,
+          "schema": 1,
+          "command": "step-12",
+          "chain": "8e2c6fe2598871cdc6f6b13a7e1762f13026f34f064bb82247311cd7bff97fcb"
+        },
+        {
+          "seq": 14,
+          "schema": 1,
+          "command": "step-13",
+          "chain": "61c12814f66ca3762de9c3f81d2e0864bec3bb040cd85fda61c6005bc3dd672d"
+        },
+        {
+          "seq": 15,
+          "schema": 1,
+          "command": "step-14",
+          "chain": "2005a1cd32269701fb816c944f4e336ca41fade08879578791d3ecf68e5d7263"
+        },
+        {
+          "seq": 16,
+          "schema": 1,
+          "command": "step-15",
+          "chain": "462a24ce863f5966828dfded784561e66c6015ce10bcbe8393ce987628c6bc62"
+        },
+        {
+          "seq": 17,
+          "schema": 1,
+          "command": "step-16",
+          "chain": "489d2f228825dc81494bf862313fdf1be3612fb2f22f05e87ed3f3f593f1044e"
+        },
+        {
+          "seq": 18,
+          "schema": 1,
+          "command": "step-17",
+          "chain": "3c9acb85e39cf94dcbfc535388ab5b03ddb372ab23bbd58aa3d7da3f1d7b4f24"
+        },
+        {
+          "seq": 19,
+          "schema": 1,
+          "command": "step-18",
+          "chain": "efdfe4a7975f93f883163e65c0cada01eb12402331e27b776689eac7ddde4afc"
+        },
+        {
+          "seq": 20,
+          "schema": 1,
+          "command": "step-19",
+          "chain": "a86559395f2a1d700eb68571f9fc622a6128bd51bed9c573fbd0e0c3a2e1b391"
+        },
+        {
+          "seq": 21,
+          "schema": 1,
+          "command": "step-20",
+          "chain": "1cb84ed4bdf98b3dd34901ffba432c2576d78aca233afc8b5e1f1ef9fafb1a36"
+        },
+        {
+          "seq": 22,
+          "schema": 1,
+          "command": "step-21",
+          "chain": "181bb31857825139dd840672b3127e688cf7948ed493418081ead9c2d2c08236"
+        },
+        {
+          "seq": 23,
+          "schema": 1,
+          "command": "step-22",
+          "chain": "07226f10185223c2e74b9f4363ea8cbfea550526682af01fe2644aecfdb30f7d"
+        },
+        {
+          "seq": 24,
+          "schema": 1,
+          "command": "step-23",
+          "chain": "6f3f778b9d1b689c370d1e6c25009f843d04dc216cc55703616d2766704e46f4"
+        },
+        {
+          "seq": 25,
+          "schema": 1,
+          "command": "step-24",
+          "chain": "fb896790e91718aa3f4dc5d3d03f9c84dd3847fe256592bebf5c6540c72a9200"
+        },
+        {
+          "seq": 26,
+          "schema": 1,
+          "command": "step-25",
+          "chain": "3ff0a6293e5e3f89c22e090f6845eb51b45ac841059dc79c9dd33f297141fb89"
+        },
+        {
+          "seq": 27,
+          "schema": 1,
+          "command": "step-26",
+          "chain": "bdb6bc426bf8bae853cb0e3fd4f715b80abe914f786774b321520607b8b927ba"
+        },
+        {
+          "seq": 28,
+          "schema": 1,
+          "command": "step-27",
+          "chain": "90c7760225a1634fc44508185797d0aacf4d7a2f2bfa55049da0cf8c2528db84"
+        },
+        {
+          "seq": 29,
+          "schema": 1,
+          "command": "step-28",
+          "chain": "d7c886785a806cf81d12f27a658ce650b6cf345cf83ba60949e73dd71e978d16"
+        },
+        {
+          "seq": 30,
+          "schema": 1,
+          "command": "step-29",
+          "chain": "a7fe1c587598fa69840634f672a9c8b36497623654aa2ab888d4168c759b9bb9"
+        },
+        {
+          "seq": 31,
+          "schema": 1,
+          "command": "step-30",
+          "chain": "ab3927a5212b1655bf41066c23f3386608da3f38215d6eba3b7ebb9a00e92260"
+        },
+        {
+          "seq": 32,
+          "schema": 1,
+          "command": "step-31",
+          "chain": "58419c9b0f8d1b92931816ef1f1b000605dbdcf30ed2ff60432fb330ebee94b6"
+        },
+        {
+          "seq": 33,
+          "schema": 1,
+          "command": "step-32",
+          "chain": "6710212dbe6d440fc3851b6607f94d34bc387ca6dc16cdedb3e49f6931c89f64"
+        },
+        {
+          "seq": 34,
+          "schema": 1,
+          "command": "step-33",
+          "chain": "fa033ced11c4ac06b1ceed6af0bdae7971da0d0eb1d20b40918d56ed0b31d43e"
+        },
+        {
+          "seq": 35,
+          "schema": 1,
+          "command": "step-34",
+          "chain": "632d7012f67ae3649abbc838e07833bc57a5c18c893bb93bd4034dda6b647e5d"
+        },
+        {
+          "seq": 36,
+          "schema": 1,
+          "command": "step-35",
+          "chain": "20877f89f72e1261313ae249a36ff3a38fe436be94b81c34a202432d36b95f27"
+        },
+        {
+          "seq": 37,
+          "schema": 1,
+          "command": "step-36",
+          "chain": "ec9f9e134d44fc07c804243b3d10a81c5b94201e705d122341eb67e97edd6c46"
+        },
+        {
+          "seq": 38,
+          "schema": 1,
+          "command": "step-37",
+          "chain": "2d2e93f939a19ffaa34a25b9a94bb829d92bc031464defa7928731da373474fd"
+        },
+        {
+          "seq": 39,
+          "schema": 1,
+          "command": "step-38",
+          "chain": "176b5185a59fca04cb756b1376839549d617313e055124216a2080498c116f45"
+        },
+        {
+          "seq": 40,
+          "schema": 1,
+          "command": "step-39",
+          "chain": "941c85c28766f255641e2595cd757f383f7c9e9bd096c3fe30dc009c3ff95546"
+        },
+        {
+          "seq": 41,
+          "schema": 1,
+          "command": "step-40",
+          "chain": "2a8a0b0b95627ecd984db5b663a60f3cd9b6796dc71ab59bf4dfbe7cb4ab3b98"
+        },
+        {
+          "seq": 42,
+          "schema": 1,
+          "command": "step-41",
+          "chain": "4aa06fb74de40039dc1ddfee20b0d81122d5cb61b483ba19abd76a9f7ef20cd1"
+        },
+        {
+          "seq": 43,
+          "schema": 1,
+          "command": "step-42",
+          "chain": "186f980cc07fcb0eba04619213fd48cc588e794541d9f5efd655e8608832e0bc"
+        },
+        {
+          "seq": 44,
+          "schema": 1,
+          "command": "step-43",
+          "chain": "f93172882524dab4fe31a6961611456b308e30c65467826b422eb48af288b426"
+        },
+        {
+          "seq": 45,
+          "schema": 1,
+          "command": "step-44",
+          "chain": "ca86f044214d6ebdc0ee851f44f75d0674a9d3c56efff5bd5b869b5600fca543"
+        },
+        {
+          "seq": 46,
+          "schema": 1,
+          "command": "step-45",
+          "chain": "e5cb26e064853e4efbfe59a438b454d2ffbacc5a74afa1b02bc81c0084eaaed9"
+        },
+        {
+          "seq": 47,
+          "schema": 1,
+          "command": "step-46",
+          "chain": "502db45a50501fc72fdef0be9f4ae7440d626cbc1113a10a6c58d14e34304681"
+        },
+        {
+          "seq": 48,
+          "schema": 1,
+          "command": "step-47",
+          "chain": "e65e508198de5e3c8d11586dfcb6f330aa6be3ec2e5d5ec6bf1cf50327cb2df9"
+        },
+        {
+          "seq": 49,
+          "schema": 1,
+          "command": "step-48",
+          "chain": "ef21b10d2b98d9e43feb897de08f11a71f6fef58d61cb32414862729904a7746"
+        },
+        {
+          "seq": 50,
+          "schema": 1,
+          "command": "step-49",
+          "chain": "1b046495e19a1bfd09c50139eea75b944695871585c9188063ac8e6a68560195"
+        },
+        {
+          "seq": 51,
+          "schema": 1,
+          "command": "step-50",
+          "chain": "a5b86230a2c8f4018dbdd40484a8da8e6a09312c1e554ac959ea409d52275f1e"
+        },
+        {
+          "seq": 52,
+          "schema": 1,
+          "command": "step-51",
+          "chain": "8ec27228cbf94ccf16552eadf1481042afc9a3c11febf000172bfd49b4d1561a"
+        },
+        {
+          "seq": 53,
+          "schema": 1,
+          "command": "step-52",
+          "chain": "b5a658d92dcb723947d1dac04f18138bf2f9553dee3b1a6420bb512fe639442d"
+        },
+        {
+          "seq": 54,
+          "schema": 1,
+          "command": "step-53",
+          "chain": "291cadf28a9fd4711836f995721b93a4cb6c88060e2d91ae58c4e6455be4395a"
+        },
+        {
+          "seq": 55,
+          "schema": 1,
+          "command": "step-54",
+          "chain": "0e8cac7c22004f9121f9624462a2d293f8c5796123778f56b2d9e627958d4756"
+        },
+        {
+          "seq": 56,
+          "schema": 1,
+          "command": "step-55",
+          "chain": "325a9a5f0fdb5654a8acb1a51acd4046bc231fbcae4067931fabd8e08a601470"
+        },
+        {
+          "seq": 57,
+          "schema": 1,
+          "command": "step-56",
+          "chain": "a7ca9cce6553a79625e5698b0606ac2567891bdd0c12e5e67f676c01b7618788"
+        },
+        {
+          "seq": 58,
+          "schema": 1,
+          "command": "step-57",
+          "chain": "479205f45bf8fe6ed3f54a097a47ddae99083c6055020bfb492e1aebd19a1b25"
+        },
+        {
+          "seq": 59,
+          "schema": 1,
+          "command": "step-58",
+          "chain": "3508b302dade22e7aa4304b65c1862a179705386d2201bdb58f596ee03eb115c"
+        },
+        {
+          "seq": 60,
+          "schema": 1,
+          "command": "step-59",
+          "chain": "e788c06cfc305533a538c80e82b48106cf1a1bd75f03a109e77c3110c77a5a56"
+        },
+        {
+          "seq": 61,
+          "schema": 1,
+          "command": "step-60",
+          "chain": "fdfa293b859c4c2837c131ea6298649a3688e1200c03371e258954d26b8e451e"
+        },
+        {
+          "seq": 62,
+          "schema": 1,
+          "command": "step-61",
+          "chain": "c26d57cbe77bd8449c613ca78a51b2ea8bdc901604d3a4f557f32772d986ff34"
+        },
+        {
+          "seq": 63,
+          "schema": 1,
+          "command": "step-62",
+          "chain": "785f1c436a72f50a9960b033351b221e966d210d478efc0cf7fc18065782ed5c"
+        },
+        {
+          "seq": 64,
+          "schema": 1,
+          "command": "step-63",
+          "chain": "ca4652c0846d5d6cb6e64edbd771e806c36cf710cb30c0e9305590abfb1476a7"
+        },
+        {
+          "seq": 65,
+          "schema": 1,
+          "command": "step-64",
+          "chain": "1bbeb916d945dc77acb46e6df4fe4b567eaeb2bd1eb11bbbfc22c2c452acd470"
+        },
+        {
+          "seq": 66,
+          "schema": 1,
+          "command": "step-65",
+          "chain": "c7b3d5229f5cb83962ef60ff21440e56ab31857c8f127485eb83a1720b1618b5"
+        },
+        {
+          "seq": 67,
+          "schema": 1,
+          "command": "step-66",
+          "chain": "313ef4eabf27f367167d91cc6c8cdaeb30e0b7154d637fd069e61e691c147b36"
+        }
+      ],
+      "checkpoints": [
+        {
+          "seq": 0,
+          "schema": 1,
+          "digest": "c6c91f1c5d98aed3e6220763d10aedb0a3053542590013c657bd2e070899f156"
+        },
+        {
+          "seq": 1,
+          "schema": 1,
+          "digest": "f78712bcecc4e080e232a8ad99492ec549ef49271ac489aa528efc50f57931e2"
+        },
+        {
+          "seq": 2,
+          "schema": 1,
+          "digest": "74dcef0e80412b8a9de41308953bc9ca3a303dc22e6087865a02dfbbf0e51197"
+        },
+        {
+          "seq": 3,
+          "schema": 1,
+          "digest": "6fd4f475d0d4345308e81a5f8db63a333e755bb6a69f310c1f15f1cfa72a43bb"
+        },
+        {
+          "seq": 11,
+          "schema": 1,
+          "digest": "2d532aa8849eb2a67d21f46fead6f1435ed89fa44067acc12b3ae91da40267b9"
+        },
+        {
+          "seq": 19,
+          "schema": 1,
+          "digest": "6b4c307cf8abae962d14a8ac32485e2ee2208a077bf230eef6574175cf1411c2"
+        },
+        {
+          "seq": 27,
+          "schema": 1,
+          "digest": "5e778543328d727d5b6b0286dbf827d6789f9da47430285b1fdc14be5ccdfe4d"
+        },
+        {
+          "seq": 35,
+          "schema": 1,
+          "digest": "7e10d42487e87c2e500dd26cfdee7c681aea458cf153f0728ad74c012bdd4b6f"
+        },
+        {
+          "seq": 43,
+          "schema": 1,
+          "digest": "637500396eb8213b7fe2ff210dc3b8d000b5cd006574eb0bd7ccc9e4be45a747"
+        },
+        {
+          "seq": 51,
+          "schema": 1,
+          "digest": "2554bbb338b4d99a19325c34ab8644932ba5140ccce93e6245f687bf3252ac9e"
+        },
+        {
+          "seq": 59,
+          "schema": 1,
+          "digest": "b5e69f4c94809f60aa41040edd592ce47d5494f113bf9fd883f56987784569b1"
+        },
+        {
+          "seq": 67,
+          "schema": 1,
+          "digest": "1553892ab5fb8e512e1ee12566260aad085859bdd4e432546c13ca8fc7094cae"
+        }
+      ]
+    }
+  },
+  "provider_attempts": {
+    "A": [],
+    "B": []
+  }
+}
