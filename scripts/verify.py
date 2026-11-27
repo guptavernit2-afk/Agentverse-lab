@@ -30,6 +30,11 @@ def verify(root: Path, phase: int) -> int:
     if phase >= 5:
         checks.append(("Paired offline demo", [sys.executable, str(root / "scripts/demo.py"),
                       "--mode", "rule_based", "--seed", "42", "--scenario", "food-scarcity"], root))
+    if phase >= 6:
+        os.environ["AGENTVERSE_VERIFICATION_PYTHON"] = sys.executable
+        for label, target in (("Frontend lint", "lint"), ("Frontend unit tests", "test"),
+                              ("Real backend browser workflow", "test:e2e")):
+            checks.append((label, [npm, "--offline", "run", target], frontend))
     failed = False
     for label, command, directory in checks:
         print(f"\n{label}", flush=True)
@@ -46,7 +51,7 @@ def verify(root: Path, phase: int) -> int:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", type=int, choices=[0, 1, 2, 3, 4, 5], required=True)
+    parser.add_argument("--phase", type=int, choices=[0, 1, 2, 3, 4, 5, 6], required=True)
     args = parser.parse_args()
     return verify(Path(__file__).resolve().parents[1], args.phase)
 

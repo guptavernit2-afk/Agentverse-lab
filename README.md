@@ -2,7 +2,7 @@
 
 AgentVerse is a local simulation lab for studying how access to verifiable evidence affects decisions and cooperation in a six-agent town. The vision, phase roadmap, and acceptance gates are in [PRD.md](PRD.md). The [state authority ADR](docs/adr/0001-state-authority.md) records the boundaries that govern later implementation.
 
-The in-memory kernel supports a deterministic town economy, scoped messages, evidence grants, food commitments, and directional trust. The offline CLI exercises the kernel. [Phase 2 verification report](docs/verification/phase-2.md)
+The dashboard runs a deterministic town economy with scoped messages, evidence grants, food commitments and directed trust. SQLite stores replayable histories and independent branches. The paired scarcity experiment compares two evidence-access assignments. [Phase 5 experiment evidence](docs/verification/phase-5.md)
 
 ## Setup and verification
 
@@ -15,7 +15,10 @@ Run the commands from the repository root.
 ```powershell
 uv --directory backend sync --locked
 npm.cmd --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 2
+Push-Location frontend
+npx.cmd --no-install playwright install chromium
+Pop-Location
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 6
 ```
 
 ### Unix
@@ -23,10 +26,11 @@ uv --offline --directory backend run --no-sync python ../scripts/verify.py --pha
 ```sh
 uv --directory backend sync --locked
 npm --prefix frontend ci
-uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 2
+(cd frontend && npx --no-install playwright install --with-deps chromium)
+uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 6
 ```
 
-The verifier runs the application import check, pytest, the frontend type check, and the production build. It exits nonzero if any check fails.
+The verifier runs backend tests, a paired offline demo, frontend lint, unit tests, typecheck, build and a Chromium workflow against an isolated local API. It exits nonzero if any check fails.
 
 ## Kernel demo
 
@@ -46,12 +50,14 @@ Start the API from the repository root.
 uv --offline --directory backend run --no-sync python -m uvicorn agentverse.api.main:app --host 127.0.0.1 --port 8000
 ```
 
-Open `http://127.0.0.1:8000/health`. The response should be HTTP 200 with `{"status":"ok","version":"0.1.0"}` for this scaffold. The keys in `.env.example` show the equivalent Uvicorn process defaults.
+Open the [local dashboard](http://127.0.0.1:8000). The API serves the built frontend on the same loopback origin. Choose **New run**, **Step round**, and select an agent. In **Experiment lab** fork event 2, run A and B, and compare or export the results. **Inspect history B** opens a verified replay. The agent inspector uses grants as of the selected event.
 
-After a successful build, preview the frontend in a separate terminal. Use `npm` in place of `npm.cmd` on Unix.
+For frontend development, run `npm --prefix frontend run dev` alongside the API. The Vite server proxies HTTP and WebSocket requests to the local backend.
 
-```powershell
-npm.cmd --offline --prefix frontend run preview
+Run the offline paired CLI from the project root.
+
+```sh
+uv --offline --directory backend run --no-sync python ../scripts/demo.py --mode rule_based --seed 42 --scenario food-scarcity --output ../.local/demo
 ```
 
-Open `http://127.0.0.1:4173` to see the AgentVerse Lab shell and its inactive run status.
+The output directory receives a SQLite database, a JSON file containing the manifest, ordered histories and metrics, and a long-form metrics CSV. Source runs and histories are trusted local operator data. Live provider testing requires separate operator authorization.

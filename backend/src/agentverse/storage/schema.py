@@ -21,6 +21,13 @@ CREATE TABLE branches (
     experiment TEXT NOT NULL REFERENCES experiments(id), label TEXT NOT NULL,
     run TEXT NOT NULL UNIQUE REFERENCES runs(id), status TEXT NOT NULL, telemetry TEXT NOT NULL,
     PRIMARY KEY (experiment, label));
+""", """
+CREATE TABLE controls (
+    run TEXT PRIMARY KEY REFERENCES runs(id), status TEXT NOT NULL,
+    revision INTEGER NOT NULL, delay REAL NOT NULL);
+CREATE TABLE control_results (
+    run TEXT NOT NULL REFERENCES runs(id), key TEXT NOT NULL, request TEXT NOT NULL,
+    response TEXT NOT NULL, PRIMARY KEY (run,key));
 """)
 
 
