@@ -18,4 +18,6 @@ See the [Phase 2 verification report](verification/phase-2.md) for the checkpoin
 - Phase 3 offline policy tests passed. [Phase 3 evidence](verification/phase-3.md)
 - Phase 3 passed on both hosted runners. [CI run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45971898379)
 - Phase 4 replay, restart and independent forks passed locally. [Phase 4 evidence](verification/phase-4.md)
+- Phase 4 passed on both hosted runners. [CI run](https://github.com/guptavernit2-afk/Agentverse-lab/actions/runs/45972321460)
+- Phase 5 completed the offline scarcity pair. [Phase 5 evidence](verification/phase-5.md)
 - The owner will select the project distribution license before public release.

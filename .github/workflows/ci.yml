@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   verification:
-    name: Phase 4 on ${{ matrix.os }}
+    name: Phase 5 on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -35,5 +35,5 @@ jobs:
         run: |
           $npm = if ($IsWindows) { 'npm.cmd' } else { 'npm' }
           & $npm --prefix frontend ci
-      - name: Verify through Phase 4
-        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 4
+      - name: Verify through Phase 5
+        run: uv --offline --directory backend run --no-sync python ../scripts/verify.py --phase 5

@@ -72,6 +72,8 @@ class GeminiPolicy:
             raise ValueError("invalid model identifier")
         self.model, self._key, self.limits, self._transport = model, key, limits, transport
         self.attempts = self.reserved_tokens = self.reported_tokens = 0
+        self.retries = self.input_tokens = self.output_tokens = 0
+        self.usage_responses = 0
         self.outputs: list[str] = []
         self._lock = Lock()
 
@@ -103,12 +105,17 @@ class GeminiPolicy:
         bound = len(json.dumps(body).encode()) + self.limits.output + 128
         for attempt in range(2):
             self.reserve(bound)
+            self.retries += int(attempt > 0)
             try:
                 reply = self._transport(self.model, self._key, body, self.limits.timeout)
                 used = reply.get("usageMetadata", {}).get("totalTokenCount")
                 if type(used) is int and used >= 0:
                     with self._lock:
                         self.reported_tokens += used
+                        self.usage_responses += 1
+                        usage = reply["usageMetadata"]
+                        self.input_tokens += usage.get("promptTokenCount", 0)
+                        self.output_tokens += usage.get("candidatesTokenCount", 0) + usage.get("thoughtsTokenCount", 0)
                         self.reserved_tokens += max(0, used - bound)
                 candidate = reply["candidates"][0]
                 if candidate.get("finishReason") != "STOP":

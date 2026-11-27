@@ -60,16 +60,19 @@ class Store:
         return row
 
     def create(self, run: str, config: TownScenario, seed: int):
-        kernel = Kernel(config, seed, run_id=run)
         with self.transaction(write=True) as db:
-            value = kernel.state.canonical()
-            initial = digest(value)
-            db.execute("INSERT INTO runs VALUES (?,?,?,NULL,NULL,0,?,?)",
-                       (run, config.model_dump_json(), seed, initial, initial))
-            db.execute("INSERT INTO snapshots VALUES (?,0,?,?,?)", (run, SCHEMA, value, initial))
+            return self.create_in(db, run, config, seed)
+
+    def create_in(self, db, run: str, config: TownScenario, seed: int) -> Kernel:
+        kernel = Kernel(config, seed, run_id=run)
+        value = kernel.state.canonical()
+        initial = digest(value)
+        db.execute("INSERT INTO runs VALUES (?,?,?,NULL,NULL,0,?,?)",
+                   (run, config.model_dump_json(), seed, initial, initial))
+        db.execute("INSERT INTO snapshots VALUES (?,0,?,?,?)", (run, SCHEMA, value, initial))
         return kernel
 
-    def _load(self, db, run: str) -> Kernel:
+    def load_in(self, db, run: str) -> Kernel:
         row = self._row(db, run)
         kernel = Kernel(TownScenario.model_validate_json(row["scenario"]), row["seed"], run_id=run)
         snapshots = {r["seq"]: r for r in db.execute("SELECT * FROM snapshots WHERE run=?", (run,))}
@@ -104,36 +107,39 @@ class Store:
 
     def load(self, run: str) -> Kernel:
         with self.transaction() as db:
-            return self._load(db, run)
+            return self.load_in(db, run)
 
     def save(self, kernel: Kernel, expected: int, key: str, request: str) -> int:
         """Commit already computed events. Duplicate requests return their original version."""
+        with self.transaction(write=True) as db:
+            return self.save_in(db, kernel, expected, key, request)
+
+    def save_in(self, db, kernel: Kernel, expected: int, key: str, request: str) -> int:
         run = kernel.run_id
         request = canonical([expected, request])
-        with self.transaction(write=True) as db:
-            row = self._row(db, run)
-            prior = db.execute("SELECT * FROM commands WHERE run=? AND key=?", (run, key)).fetchone()
-            if prior:
-                if request != prior["request"]:
-                    raise TurnConflict("command key was reused")
-                return prior["result"]
-            if row["head"] != expected or kernel.world_at(expected).digest() != row["state_hash"]:
-                raise TurnConflict("stale or mismatched run state")
-            chain = row["head_hash"]
-            for e in kernel.events[expected:]:
-                raw = canonical(asdict(e))
-                chain = chain_hash(chain, e.sequence, key, raw)
-                db.execute("INSERT INTO events VALUES (?,?,?,?,?,?)", (run, e.sequence, SCHEMA, key, raw, chain))
-                w = kernel.world_at(e.sequence)
-                if w.stage in {"ready", "finished"}:
-                    raw_world = w.canonical()
-                    db.execute("INSERT INTO snapshots VALUES (?,?,?,?,?)",
-                               (run, w.version, SCHEMA, raw_world, digest(raw_world)))
-            head = kernel.state
-            db.execute("UPDATE runs SET head=?,head_hash=?,state_hash=? WHERE id=?",
-                       (head.version, chain, head.digest(), run))
-            db.execute("INSERT INTO commands VALUES (?,?,?,?)", (run, key, request, head.version))
-            return head.version
+        row = self._row(db, run)
+        prior = db.execute("SELECT * FROM commands WHERE run=? AND key=?", (run, key)).fetchone()
+        if prior:
+            if request != prior["request"]:
+                raise TurnConflict("command key was reused")
+            return prior["result"]
+        if row["head"] != expected or kernel.world_at(expected).digest() != row["state_hash"]:
+            raise TurnConflict("stale or mismatched run state")
+        chain = row["head_hash"]
+        for e in kernel.events[expected:]:
+            raw = canonical(asdict(e))
+            chain = chain_hash(chain, e.sequence, key, raw)
+            db.execute("INSERT INTO events VALUES (?,?,?,?,?,?)", (run, e.sequence, SCHEMA, key, raw, chain))
+            w = kernel.world_at(e.sequence)
+            if w.stage in {"ready", "finished"}:
+                raw_world = w.canonical()
+                db.execute("INSERT INTO snapshots VALUES (?,?,?,?,?)",
+                           (run, w.version, SCHEMA, raw_world, digest(raw_world)))
+        head = kernel.state
+        db.execute("UPDATE runs SET head=?,head_hash=?,state_hash=? WHERE id=?",
+                   (head.version, chain, head.digest(), run))
+        db.execute("INSERT INTO commands VALUES (?,?,?,?)", (run, key, request, head.version))
+        return head.version
 
     def command_result(self, run: str, expected: int, key: str, request: str) -> int | None:
         with self.transaction() as db:
@@ -144,7 +150,7 @@ class Store:
 
     def checkpoints(self, run: str) -> list[dict]:
         with self.transaction() as db:
-            self._load(db, run)
+            self.load_in(db, run)
             return [dict(r) for r in db.execute("SELECT seq,digest FROM snapshots WHERE run=? ORDER BY seq", (run,))]
 
     def fork(self, parent: str, seq: int, children: tuple[str, ...]):
@@ -152,7 +158,7 @@ class Store:
             self.fork_in(db, parent, seq, children)
 
     def fork_in(self, db, parent: str, seq: int, children: tuple[str, ...]):
-        source = self._load(db, parent)
+        source = self.load_in(db, parent)
         w = source.world_at(seq)
         if w.stage not in {"ready", "finished"}:
             raise TurnConflict("fork requires settled checkpoint")

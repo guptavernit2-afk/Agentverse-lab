@@ -15,7 +15,13 @@ CREATE TABLE snapshots (
 CREATE TABLE commands (
     run TEXT NOT NULL REFERENCES runs(id), key TEXT NOT NULL, request TEXT NOT NULL,
     result INTEGER NOT NULL, PRIMARY KEY (run, key));
-""",)
+""", """
+CREATE TABLE experiments (id TEXT PRIMARY KEY, manifest TEXT NOT NULL);
+CREATE TABLE branches (
+    experiment TEXT NOT NULL REFERENCES experiments(id), label TEXT NOT NULL,
+    run TEXT NOT NULL UNIQUE REFERENCES runs(id), status TEXT NOT NULL, telemetry TEXT NOT NULL,
+    PRIMARY KEY (experiment, label));
+""")
 
 
 def migrate(db: sqlite3.Connection) -> None:

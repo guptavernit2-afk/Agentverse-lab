@@ -92,13 +92,12 @@ class Kernel:
             history = ((self._events[i], self._states[i + 1]) for i in range(index))
             return project(world, actor, history)
 
-    def publish_harvest_claim(self) -> Event:
+    def publish_harvest_claim(self, text: str = "Every scheduled round will produce fewer than six food units.") -> Event:
         with self._lock:
             w = self._state
             if w.social.claims:
                 raise ValueError("harvest claim already published")
-            claim = Claim("claim-harvest", "reduced_harvest", "town-board",
-                          "Every scheduled round will produce fewer than six food units.")
+            claim = Claim("claim-harvest", "reduced_harvest", "town-board", text)
             return self._commit(Event(w.version + 1, w.round, "CLAIM_PUBLISHED", claim=claim))
 
     def issue_harvest_record(self) -> Event:
